@@ -83,6 +83,69 @@
         <header class="article-info clearfix">
   <h1 itemprop="name">
     
+      <a href="/2020/02/06/calendar 模块/" title="calendar 模块" itemprop="url">calendar 模块</a>
+  </h1>
+  <p class="article-author">By
+       
+		<a href="/about" title="S" target="_blank" itemprop="author">S</a>
+		
+  <p class="article-time">
+    <time datetime="2020-02-06T12:31:25.304Z" itemprop="datePublished"> 发表于 2020-02-06</time>
+    
+  </p>
+</header>
+    <div class="article-content">
+        
+        <h2 id="calendar-模块"><a href="#calendar-模块" class="headerlink" title="calendar 模块"></a>calendar 模块</h2><p>包括日历、日期相关函数。</p>
+<h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><p>calendar模块有较多函数，此处仅列举常用函数。calendar返回指定年的日历字符串；month返回指定年月的日历；weekday返回指定日期是星期几；isleap判断指定年是不是闰年；leapdays返回指定年限内闰年的数量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">calendar.calendar(year,w=2,l=1,c=6,m=3) -&gt; string (multi-line)</span><br><span class="line"><span class="comment">#w表示日之间的间隔宽度，默认间隔2；</span></span><br><span class="line"><span class="comment">#l表示行间隔，默认为1行；</span></span><br><span class="line"><span class="comment">#c表示月之间的间隔宽度，默认为6；</span></span><br><span class="line"><span class="comment">#m表示并列显示的月份数量，默认3个月并排显示</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calendar.month(year,month,w=0,l=0) -&gt; string (multi-line)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">calendar.weekday(year, month, day)  -&gt; int</span><br><span class="line"><span class="comment">#注意：默认0表示星期一；0~6：星期一~星期日。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calendar.isleap(year) -&gt; bool</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：闰年包括两种：①公历年份是4的倍数的，且不是100的倍数，比如2020,2004；②公历年份是400的倍数，比如2000。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calendar.leapdays(y1, y2) -&gt; int</span><br></pre></td></tr></table></figure>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="calendar"><a href="#calendar" class="headerlink" title="calendar"></a>calendar</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.calendar(<span class="number">2020</span>))</span><br><span class="line"><span class="comment">#结果返回多行字符串，因此需要打印，直接输出可能格式错乱且包括换行符\n.</span></span><br></pre></td></tr></table></figure>
+
+
+<h5 id="month"><a href="#month" class="headerlink" title="month"></a>month</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.month(<span class="number">2020</span>,<span class="number">3</span>))</span><br><span class="line"><span class="comment">#输出：</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">     March 2020</span></span><br><span class="line"><span class="string">Mo Tu We Th Fr Sa Su</span></span><br><span class="line"><span class="string">                   1</span></span><br><span class="line"><span class="string"> 2  3  4  5  6  7  8</span></span><br><span class="line"><span class="string"> 9 10 11 12 13 14 15</span></span><br><span class="line"><span class="string">16 17 18 19 20 21 22</span></span><br><span class="line"><span class="string">23 24 25 26 27 28 29</span></span><br><span class="line"><span class="string">30 31</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<h5 id="weekday"><a href="#weekday" class="headerlink" title="weekday"></a>weekday</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.weekday(<span class="number">2020</span>,<span class="number">3</span>,<span class="number">5</span>))</span><br><span class="line"><span class="comment">#输出：3  表示星期四</span></span><br></pre></td></tr></table></figure>
+<h5 id="isleap"><a href="#isleap" class="headerlink" title="isleap"></a>isleap</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.isleap(<span class="number">2020</span>))</span><br><span class="line"><span class="comment">#输出：True</span></span><br></pre></td></tr></table></figure>
+<h5 id="leapdays"><a href="#leapdays" class="headerlink" title="leapdays"></a>leapdays</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.leapdays(<span class="number">1900</span>,<span class="number">2020</span>))</span><br><span class="line"><span class="comment">#输出：29  表示[1900,2020)间有29个闰年</span></span><br></pre></td></tr></table></figure>
+        
+        
+        <p class="article-more-link">
+          
+       </p>
+    </div>
+    <footer class="article-footer clearfix">
+<div class="article-catetags">
+
+
+</div>
+
+
+
+
+<div class="comments-count">
+	
+</div>
+
+</footer>
+
+
+    </article>
+
+
+
+
+
+
+   
+    
+    <article class="post-expand post" itemprop="articleBody"> 
+        <header class="article-info clearfix">
+  <h1 itemprop="name">
+    
       <a href="/2020/02/06/struct 模块/" title="struct 模块" itemprop="url">struct 模块</a>
   </h1>
   <p class="article-author">By
