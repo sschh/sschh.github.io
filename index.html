@@ -303,6 +303,152 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/07/itertools%20%E6%A8%A1%E5%9D%97/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="S">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="逍遥">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/07/itertools%20%E6%A8%A1%E5%9D%97/" itemprop="url">itertools 模块</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-07T23:17:55+08:00">
+                2020-02-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/02/07/itertools%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/07/itertools%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="itertools-模块"><a href="#itertools-模块" class="headerlink" title="itertools 模块"></a>itertools 模块</h2><p>包括创建和使用迭代器的函数。</p>
+<p>迭代器是可以记录遍历位置。迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。</p>
+<h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><p>itertools模块包括较多关于迭代器创建、合并、切分等操作的函数，这里介绍如下几个。</p>
+<p>permutations生成一个迭代对象的全排列； chain连接多个列表或者迭代器；cycle对输入对象生成循环迭代对象；count基于给定初值和步长，进行无限迭代；islice指定起、终点、步长的迭代器。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">itertools.permutations(iterable,r=None) --&gt; permutations object</span><br><span class="line"><span class="comment">#r表示迭代器中元素的长度</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">itertools.chain(*iterables) --&gt; chain object</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">itertools.cycle(iterable) --&gt; cycle object</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">itertools.count(start=0,step=1) --&gt; count object</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">itertools.islice(iterable,start,stop,step=1) --&gt; islice object</span><br><span class="line"><span class="comment">#类似切片操作，但是输出为迭代器对象。</span></span><br></pre></td></tr></table></figure>
+<p>注意：对于迭代对象的输出，有限迭代对象可以转化为list，直接一次性输出。或者利用循环遍历结果等方法。内置函数next()可以用来输出迭代对象。</p>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="permutations"><a href="#permutations" class="headerlink" title="permutations"></a>permutations</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">data=itertools.permutations(<span class="string">'abc'</span>)</span><br><span class="line">list(data)</span><br><span class="line"><span class="comment">#输出：</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">[('a', 'b', 'c'),</span></span><br><span class="line"><span class="string"> ('a', 'c', 'b'),</span></span><br><span class="line"><span class="string"> ('b', 'a', 'c'),</span></span><br><span class="line"><span class="string"> ('b', 'c', 'a'),</span></span><br><span class="line"><span class="string"> ('c', 'a', 'b'),</span></span><br><span class="line"><span class="string"> ('c', 'b', 'a')]</span></span><br><span class="line"><span class="string"> """</span></span><br><span class="line">data=itertools.permutations(<span class="string">'001'</span>)</span><br><span class="line">list(data)</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">[('0', '0', '1'),</span></span><br><span class="line"><span class="string"> ('0', '1', '0'),</span></span><br><span class="line"><span class="string"> ('0', '0', '1'),</span></span><br><span class="line"><span class="string"> ('0', '1', '0'),</span></span><br><span class="line"><span class="string"> ('1', '0', '0'),</span></span><br><span class="line"><span class="string"> ('1', '0', '0')]</span></span><br><span class="line"><span class="string"> """</span></span><br><span class="line"><span class="comment">#permutations输出的是输入对象的全排列，因此对于重复元素会出现重复结果，如('0', '0', '1')。</span></span><br></pre></td></tr></table></figure>
+
+
+<h5 id="chain"><a href="#chain" class="headerlink" title="chain"></a>chain</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">itertools.chain(range(<span class="number">5</span>),range(<span class="number">100</span>,<span class="number">105</span>))</span><br><span class="line"><span class="comment">#输出为迭代器对象：&lt;itertools.chain at 0x7f01d56d1cc0&gt;</span></span><br><span class="line">list(itertools.chain(range(<span class="number">5</span>),range(<span class="number">100</span>,<span class="number">105</span>)))</span><br><span class="line"><span class="comment">#输出：[0, 1, 2, 3, 4, 100, 101, 102, 103, 104]</span></span><br><span class="line">list(itertools.chain(range(<span class="number">3</span>),[<span class="string">'s'</span>,<span class="string">'a'</span>],<span class="string">'124'</span>))</span><br><span class="line"><span class="comment">#输出：[0, 1, 2, 's', 'a', '1', '2', '4']</span></span><br></pre></td></tr></table></figure>
+<h5 id="cycle"><a href="#cycle" class="headerlink" title="cycle"></a>cycle</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> itertools.cycle(<span class="string">'abc'</span>):</span><br><span class="line">    res.append(i)</span><br><span class="line">    <span class="comment">#因为迭代对象无限循环，因此指定输出长度break</span></span><br><span class="line">    <span class="keyword">if</span> len(res)==<span class="number">7</span>:<span class="keyword">break</span></span><br><span class="line">print(res)</span><br><span class="line"><span class="comment">#输出：['a', 'b', 'c', 'a', 'b', 'c', 'a']</span></span><br></pre></td></tr></table></figure>
+<h5 id="count"><a href="#count" class="headerlink" title="count"></a>count</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">data=itertools.count(<span class="number">10</span>,<span class="number">2</span>)<span class="comment">#初值为10，步长为2</span></span><br><span class="line"><span class="comment">#使用循环遍历迭代结果，因为是无限迭代，所以设定大于20则退出</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> data:</span><br><span class="line">    <span class="keyword">if</span> i&gt;<span class="number">20</span>:<span class="keyword">break</span></span><br><span class="line">    print(i)</span><br><span class="line"><span class="comment">#输出：10  12  14  16  18  20</span></span><br></pre></td></tr></table></figure>
+<h5 id="islice"><a href="#islice" class="headerlink" title="islice"></a>islice</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> itertools</span><br><span class="line">list(itertools.islice(<span class="string">'abcdefg'</span>,<span class="number">2</span>,<span class="number">5</span>))<span class="comment">#起始索引2，终止索引5，默认步长1</span></span><br><span class="line"><span class="comment">#输出：['c', 'd', 'e']</span></span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/06/calendar%20%E6%A8%A1%E5%9D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1048,7 +1194,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
