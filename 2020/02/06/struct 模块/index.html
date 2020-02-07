@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="struct 模块在Python和C结构之间转换的函数，用于二进制数据存储和处理，处理c语言中的结构体。 常用函数常用函数包括如下三个，pack将数据封装成字节流；unpack根据给定格式解析字节，返回tuple类型； calcsize返回给定的格式占用内存的字节数。 1struct.pack(fmt, v1, v2, ...) -&gt; bytes 1struct.unpack(fmt, bu">
+<meta name="description" content="title: ‘’’struct 模块’’’date: 2020-02-06 00:05:32tags: python 在Python和C结构之间转换的函数，用于二进制数据存储和处理，处理c语言中的结构体。 常用函数常用函数包括如下三个，pack将数据封装成字节流；unpack根据给定格式解析字节，返回tuple类型； calcsize返回给定的格式占用内存的字节数。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="struct 模块">
 <meta property="og:url" content="http://yoursite.com/2020/02/06/struct%20%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="逍遥">
-<meta property="og:description" content="struct 模块在Python和C结构之间转换的函数，用于二进制数据存储和处理，处理c语言中的结构体。 常用函数常用函数包括如下三个，pack将数据封装成字节流；unpack根据给定格式解析字节，返回tuple类型； calcsize返回给定的格式占用内存的字节数。 1struct.pack(fmt, v1, v2, ...) -&gt; bytes 1struct.unpack(fmt, bu">
+<meta property="og:description" content="title: ‘’’struct 模块’’’date: 2020-02-06 00:05:32tags: python 在Python和C结构之间转换的函数，用于二进制数据存储和处理，处理c语言中的结构体。 常用函数常用函数包括如下三个，pack将数据封装成字节流；unpack根据给定格式解析字节，返回tuple类型； calcsize返回给定的格式占用内存的字节数。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-05T16:54:09.179Z">
-<meta property="article:modified_time" content="2020-02-05T16:53:17.632Z">
+<meta property="article:modified_time" content="2020-02-07T15:35:11.964Z">
 <meta property="article:author" content="S">
 <meta name="twitter:card" content="summary">
 
@@ -383,8 +383,11 @@
       
 
       
-        <h2 id="struct-模块"><a href="#struct-模块" class="headerlink" title="struct 模块"></a>struct 模块</h2><p>在Python和C结构之间转换的函数，用于二进制数据存储和处理，处理c语言中的结构体。</p>
+        <p>title: ‘’’struct 模块’’’<br>date: 2020-02-06 00:05:32<br>tags: python</p>
+<p>在Python和C结构之间转换的函数，用于二进制数据存储和处理，处理c语言中的结构体。</p>
 <h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><p>常用函数包括如下三个，pack将数据封装成字节流；unpack根据给定格式解析字节，返回tuple类型； calcsize返回给定的格式占用内存的字节数。</p>
+<a id="more"></a>
+
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct.pack(fmt, v1, v2, ...) -&gt; bytes</span><br></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct.unpack(fmt, buffer) -&gt; (v1, v2, ...)</span><br></pre></td></tr></table></figure>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct.calcsize(fmt) -&gt; int</span><br></pre></td></tr></table></figure>
@@ -710,7 +713,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#struct-模块"><span class="nav-number">1.</span> <span class="nav-text">struct 模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用函数"><span class="nav-number">1.0.1.</span> <span class="nav-text">常用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式符（fmt）"><span class="nav-number">1.0.2.</span> <span class="nav-text">格式符（fmt）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对齐方式"><span class="nav-number">1.0.3.</span> <span class="nav-text">对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">1.0.4.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#pack"><span class="nav-number">1.0.4.1.</span> <span class="nav-text">pack</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unpack"><span class="nav-number">1.0.4.2.</span> <span class="nav-text">unpack</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#calcsize"><span class="nav-number">1.0.4.3.</span> <span class="nav-text">calcsize</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用函数"><span class="nav-number">1.</span> <span class="nav-text">常用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式符（fmt）"><span class="nav-number">2.</span> <span class="nav-text">格式符（fmt）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对齐方式"><span class="nav-number">3.</span> <span class="nav-text">对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">4.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#pack"><span class="nav-number">4.1.</span> <span class="nav-text">pack</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unpack"><span class="nav-number">4.2.</span> <span class="nav-text">unpack</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#calcsize"><span class="nav-number">4.3.</span> <span class="nav-text">calcsize</span></a></li></ol></li></ol></div>
             
 
           </div>
