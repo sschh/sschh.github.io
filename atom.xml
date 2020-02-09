@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-08T15:39:02.745Z</updated>
+  <updated>2020-02-09T15:40:35.947Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>glob 模块</title>
+    <link href="http://yoursite.com/2020/02/09/glob%20%E6%A8%A1%E5%9D%97/"/>
+    <id>http://yoursite.com/2020/02/09/glob%20%E6%A8%A1%E5%9D%97/</id>
+    <published>2020-02-09T15:40:35.947Z</published>
+    <updated>2020-02-09T15:40:35.947Z</updated>
+    
+    <content type="html"><![CDATA[<p>目录文件名查找模块。在查找路径中使用通配符，可以找到满足指定条件的所有文件路径名。</p><h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><p>该模块包括3个函数，glob用于一次性返回指定路径匹配的文件名；iglob和glob功能一样，同样查找匹配的文件名，但是返回对象是迭代器，即每次输出一个；escape在路径中选出*、？、[ 符号。</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glob.glob(pathname, *, recursive=False)   -&gt;   list</span><br></pre></td></tr></table></figure><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glob.iglob(pathname, *, recursive=False)  -&gt;   iterator object</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">glob.escape(pathname)</span><br></pre></td></tr></table></figure><p>输入路径名支持通配符：</p><table><thead><tr><th>符号</th><th>含义</th></tr></thead><tbody><tr><td>*</td><td>匹配0到多个字符</td></tr><tr><td>？</td><td>匹配1个字符</td></tr><tr><td>[a-z],[0-9]等</td><td>表示范围，匹配1个字符</td></tr></tbody></table><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="glob"><a href="#glob" class="headerlink" title="glob"></a>glob</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line">glob.glob(<span class="string">'/root/data/test1/65*.csv'</span>)</span><br><span class="line"><span class="comment">#输出‘/root/data/test1/’目录下所有65开头的csv文件</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">['/root/data/test1/65bbf6d7a405afa6348d.csv',</span></span><br><span class="line"><span class="string"> '/root/data/test1/659a34281cc2fe85020e.csv',</span></span><br><span class="line"><span class="string"> '/root/data/test1/65bc1c8c4975caff0964.csv',</span></span><br><span class="line"><span class="string"> '/root/data/test1/65657f592decf6d14040.csv',</span></span><br><span class="line"><span class="string"> '/root/data/test1/65f046177650d25f7b42.csv']</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line">glob.glob(<span class="string">'/root/*/[0-9].*'</span>)</span><br><span class="line"><span class="comment">#返回列表包括root的所有子目录中所有以一个数字命名的各种类型文件</span></span><br></pre></td></tr></table></figure><p>上文目录都是Linux系统下，Windows下目录格式不同，为了防转义，可以在字符串前加”r”<br>比如：r’C:\Users\USER\OneDrive\桌面*.txt’  或  ‘C:\Users\USER\OneDrive\桌面\*.txt’</p><h5 id="iglob"><a href="#iglob" class="headerlink" title="iglob"></a>iglob</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line">a=glob.iglob(<span class="string">'/root/data/test1/65*.csv'</span>) </span><br><span class="line"><span class="comment">#&lt;generator object _iglob at 0x7f01d5820d00&gt;</span></span><br><span class="line">next(a)</span><br><span class="line"><span class="comment">#输出：'/root/data/test1/65bbf6d7a405afa6348d.csv'</span></span><br><span class="line">next(a)</span><br><span class="line"><span class="comment">#输出：'/root/data/test1/659a34281cc2fe85020e.csv'</span></span><br></pre></td></tr></table></figure><h5 id="escape"><a href="#escape" class="headerlink" title="escape"></a>escape</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line">glob.escape(<span class="string">'C:\\Users\\USER\\One?riv[a-f]\\桌面\\*.pdf'</span>)</span><br><span class="line"><span class="comment">#输出：'C:\\Users\\USER\\One[?]riv[[]a-f]\\桌面\\[*].pdf'</span></span><br><span class="line"><span class="comment">#？*[三个符号会被[]所包括</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;目录文件名查找模块。在查找路径中使用通配符，可以找到满足指定条件的所有文件路径名。&lt;/p&gt;
+&lt;h4 id=&quot;常用函数&quot;&gt;&lt;a href=&quot;#常用函数&quot; class=&quot;headerlink&quot; title=&quot;常用函数&quot;&gt;&lt;/a&gt;常用函数&lt;/h4&gt;&lt;p&gt;该模块包括3个函数，glo
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>random 模块</title>
