@@ -83,15 +83,15 @@
 
 
 
-<meta name="description" content="title: ‘’’calendar 模块’’’date: 2020-02-06 20:31:52tags: python 包括日历、日期相关函数。 常用函数calendar模块有较多函数，此处仅列举常用函数。calendar返回指定年的日历字符串；month返回指定年月的日历；weekday返回指定日期是星期几；isleap判断指定年是不是闰年；leapdays返回指定年限内闰年的数量。 123">
+<meta name="description" content="title: ‘’’calendar 模块’’’date: 2020-02-06 20:31:52categories: python 包括日历、日期相关函数。 常用函数calendar模块有较多函数，此处仅列举常用函数。calendar返回指定年的日历字符串；month返回指定年月的日历；weekday返回指定日期是星期几；isleap判断指定年是不是闰年；leapdays返回指定年限内闰年的数">
 <meta property="og:type" content="article">
 <meta property="og:title" content="calendar 模块">
 <meta property="og:url" content="http://yoursite.com/2020/02/06/calendar%20%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="小站">
-<meta property="og:description" content="title: ‘’’calendar 模块’’’date: 2020-02-06 20:31:52tags: python 包括日历、日期相关函数。 常用函数calendar模块有较多函数，此处仅列举常用函数。calendar返回指定年的日历字符串；month返回指定年月的日历；weekday返回指定日期是星期几；isleap判断指定年是不是闰年；leapdays返回指定年限内闰年的数量。 123">
+<meta property="og:description" content="title: ‘’’calendar 模块’’’date: 2020-02-06 20:31:52categories: python 包括日历、日期相关函数。 常用函数calendar模块有较多函数，此处仅列举常用函数。calendar返回指定年的日历字符串；month返回指定年月的日历；weekday返回指定日期是星期几；isleap判断指定年是不是闰年；leapdays返回指定年限内闰年的数">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-02-06T12:31:25.304Z">
-<meta property="article:modified_time" content="2020-02-08T15:39:52.088Z">
+<meta property="article:modified_time" content="2020-02-10T05:05:43.420Z">
 <meta property="article:author" content="小羽">
 <meta name="twitter:card" content="summary">
 
@@ -103,7 +103,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -316,7 +316,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小羽">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/author.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -388,7 +388,7 @@
       
 
       
-        <p>title: ‘’’calendar 模块’’’<br>date: 2020-02-06 20:31:52<br>tags: python</p>
+        <p>title: ‘’’calendar 模块’’’<br>date: 2020-02-06 20:31:52<br>categories: python</p>
 <p>包括日历、日期相关函数。</p>
 <h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><p>calendar模块有较多函数，此处仅列举常用函数。calendar返回指定年的日历字符串；month返回指定年月的日历；weekday返回指定日期是星期几；isleap判断指定年是不是闰年；leapdays返回指定年限内闰年的数量。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">calendar.calendar(year,w=2,l=1,c=6,m=3) -&gt; string (multi-line)</span><br><span class="line"><span class="comment">#w表示日之间的间隔宽度，默认间隔2；</span></span><br><span class="line"><span class="comment">#l表示行间隔，默认为1行；</span></span><br><span class="line"><span class="comment">#c表示月之间的间隔宽度，默认为6；</span></span><br><span class="line"><span class="comment">#m表示并列显示的月份数量，默认3个月并排显示</span></span><br></pre></td></tr></table></figure>
@@ -507,6 +507,10 @@
       <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/author.jpg"
+                alt="小羽" />
             
               <p class="site-author-name" itemprop="name">小羽</p>
               <p class="site-description motion-element" itemprop="description"></p>
