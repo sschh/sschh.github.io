@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-13T05:49:19.747Z</updated>
+  <updated>2020-02-13T17:18:50.545Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shelve 模块</title>
+    <link href="http://yoursite.com/2020/02/14/shelve%20%E6%A8%A1%E5%9D%97/"/>
+    <id>http://yoursite.com/2020/02/14/shelve%20%E6%A8%A1%E5%9D%97/</id>
+    <published>2020-02-13T16:19:44.000Z</published>
+    <updated>2020-02-13T17:18:50.545Z</updated>
+    
+    <content type="html"><![CDATA[<p>一种简单的持久化存储方式，将数据存储至磁盘。产生类似字典的对象。比pickle，json模块简单。</p><h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><p>模块包含方法只有一个open，用来打开指定文件，可读可写，返回对象类似字典。打开的文件后缀名是<strong>*.db</strong>，输入时可不必输入后缀名。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shelve.open(filename, flag=<span class="string">'c'</span>, protocol=<span class="literal">None</span>, writeback=<span class="literal">False</span>)</span><br><span class="line"><span class="comment">#flag是文件打开模式。默认为c，可读写，文件不存在则创建；r：只读；w：只写；n：创建新的空文件，可读写</span></span><br><span class="line"><span class="comment">#writeback：默认为False。若为True，将所有从.db中读取的对象存放到一个内存缓存中</span></span><br></pre></td></tr></table></figure><p><strong>注意：</strong>键必须是字符串类型，值可以是python内的所有数据类型。</p><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="open"><a href="#open" class="headerlink" title="open"></a>open</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shelve</span><br><span class="line">data=shelve.open(<span class="string">'data'</span>)</span><br><span class="line">data[<span class="string">'a'</span>]=<span class="number">1</span></span><br><span class="line">data[<span class="string">'b'</span>]=<span class="string">'abc'</span></span><br><span class="line">data[<span class="string">'c'</span>]=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">data[<span class="string">'d'</span>]=&#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="comment">#list(data.items())</span></span><br><span class="line"><span class="comment">#输出：[('b','abc'),('d',&#123;'a': 1,'b': 2&#125;),('a',1),('c',[1,2,3,4])]</span></span><br><span class="line"><span class="comment">#因为返回对象类似字典，因此可以使用字典的方法，比如items()</span></span><br><span class="line">data.close()</span><br><span class="line"><span class="comment">#最后要关闭文件</span></span><br></pre></td></tr></table></figure><p><strong>关于参数writeback</strong></p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data=shelve.open(<span class="string">'data'</span>)</span><br><span class="line">data[<span class="string">'c'</span>].append(<span class="number">5</span>)</span><br><span class="line">print(data[<span class="string">'c'</span>])</span><br><span class="line"><span class="comment">#输出：[1,2,3,4]</span></span><br><span class="line">data.close()</span><br><span class="line">data=shelve.open(<span class="string">'data'</span>,writeback=<span class="literal">True</span>)</span><br><span class="line">data[<span class="string">'c'</span>].append(<span class="number">5</span>)</span><br><span class="line">print(data[<span class="string">'c'</span>])</span><br><span class="line"><span class="comment">#输出：[1,2,3,4,5]</span></span><br><span class="line"><span class="comment">#当writeback设为True时，可以原地修改db中的可变对象了</span></span><br></pre></td></tr></table></figure><p>writeback设为True时，一次将所有内容读到缓存，消耗了空间和时间，但是可以直接修改其中内容并保存。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;一种简单的持久化存储方式，将数据存储至磁盘。产生类似字典的对象。比pickle，json模块简单。&lt;/p&gt;
+&lt;h4 id=&quot;常用函数&quot;&gt;&lt;a href=&quot;#常用函数&quot; class=&quot;headerlink&quot; title=&quot;常用函数&quot;&gt;&lt;/a&gt;常用函数&lt;/h4&gt;&lt;p&gt;模块包含方
+      
+    
+    </summary>
+    
+    
+      <category term="python模块" scheme="http://yoursite.com/categories/python%E6%A8%A1%E5%9D%97/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>copy 模块</title>
