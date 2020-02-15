@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="Hello, Hexo" />
+  <meta name="keywords" content="python," />
 
 
 
@@ -90,16 +90,17 @@
 
 
 
-<meta name="description" content="经过了几番折腾，终于拥有了自己的博客，虽然还有很多欠缺的地方，接下来就边写博客边补充吧。 在下在读研究生一枚，希望通过博客来整理和分享所学知识，努力坚持更新。部分内容可能不会是原创，若有侵权，请联系，我将删除。若发现文章中有错误，请指正，谢谢！ 还有欢迎您的联系与交流，希望我们可以共同进步。知识，因分享而更加快乐。">
+<meta name="description" content="该模块实现了专门的数据类型，为Python内置数据类型dict、list、set和tuple提供了替代方案。 常用类和方法collections模块内包括很多类，因为这些类分别继承了内置类型，所以除了新定义的方法外，还能使用超类的方法。 常见类有四个，deque生成一个双向队列，可以高效的在首尾增删元素；defaultdict建立有默认键值的字典，普通字典若检索不存在的键会报错；OrderedDi">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello world">
-<meta property="og:url" content="http://yoursite.com/2020/02/04/hello-world/index.html">
+<meta property="og:title" content="collections 模块">
+<meta property="og:url" content="http://yoursite.com/2020/02/15/collections%20%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="小站">
-<meta property="og:description" content="经过了几番折腾，终于拥有了自己的博客，虽然还有很多欠缺的地方，接下来就边写博客边补充吧。 在下在读研究生一枚，希望通过博客来整理和分享所学知识，努力坚持更新。部分内容可能不会是原创，若有侵权，请联系，我将删除。若发现文章中有错误，请指正，谢谢！ 还有欢迎您的联系与交流，希望我们可以共同进步。知识，因分享而更加快乐。">
+<meta property="og:description" content="该模块实现了专门的数据类型，为Python内置数据类型dict、list、set和tuple提供了替代方案。 常用类和方法collections模块内包括很多类，因为这些类分别继承了内置类型，所以除了新定义的方法外，还能使用超类的方法。 常见类有四个，deque生成一个双向队列，可以高效的在首尾增删元素；defaultdict建立有默认键值的字典，普通字典若检索不存在的键会报错；OrderedDi">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-04T05:35:32.000Z">
-<meta property="article:modified_time" content="2020-02-13T07:09:00.666Z">
+<meta property="article:published_time" content="2020-02-14T16:25:32.000Z">
+<meta property="article:modified_time" content="2020-02-14T17:42:03.440Z">
 <meta property="article:author" content="小羽">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 
 
@@ -130,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/04/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/15/collections 模块/"/>
 
 
 
 
 
-  <title>hello world | 小站</title>
+  <title>collections 模块 | 小站</title>
   
 
 
@@ -319,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/04/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/15/collections%20%E6%A8%A1%E5%9D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小羽">
@@ -336,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hello world</h1>
+          <h1 class="post-title" itemprop="name headline">collections 模块</h1>
         
 
         <div class="post-meta">
@@ -348,8 +349,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-04T13:35:32+08:00">
-                2020-02-04
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-15T00:25:32+08:00">
+                2020-02-15
               </time>
             
 
@@ -359,6 +360,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/python%E6%A8%A1%E5%9D%97/" itemprop="url" rel="index">
+                    <span itemprop="name">python模块</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -367,8 +390,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/02/04/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/04/hello-world/" itemprop="commentCount"></span>
+                <a href="/2020/02/15/collections%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/15/collections%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -401,10 +424,25 @@
       
 
       
-        <p>经过了几番折腾，终于拥有了自己的博客，虽然还有很多欠缺的地方，接下来就边写博客边补充吧。</p>
-<p>在下在读研究生一枚，希望通过博客来整理和分享所学知识，努力坚持更新。部分内容可能不会是原创，若有侵权，请联系，我将删除。若发现文章中有错误，请指正，谢谢！</p>
-<p>还有欢迎您的联系与交流，希望我们可以共同进步。知识，因分享而更加快乐。</p>
+        <p>该模块实现了专门的数据类型，为Python内置数据类型dict、list、set和tuple提供了替代方案。</p>
+<h4 id="常用类和方法"><a href="#常用类和方法" class="headerlink" title="常用类和方法"></a>常用类和方法</h4><p>collections模块内包括很多类，因为这些类分别继承了内置类型，所以除了新定义的方法外，还能使用超类的方法。</p>
+<p>常见类有四个，deque生成一个双向队列，可以高效的在首尾增删元素；defaultdict建立有默认键值的字典，普通字典若检索不存在的键会报错；OrderedDict建立有序字典，顺序是键的输入顺序；Counter返回一个有记数功能的字典。<br><em>注意：</em>defaultdict、OrderedDict和Counter都是dict的子类，本质是字典；deque本质是list。</p>
+<p>namedtuple是一个方法，可以自定义tuple对象，定义元素名称和数量。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">collections.deque([iterable[, maxlen]]) --&gt; deque object</span><br><span class="line"><span class="comment">#生成的实例在list所有的方法上，新加了popleft、appendleft、extendleft方法</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">collections.defaultdict(default_factory[, ...]) --&gt; dict with default factory</span><br><span class="line"><span class="comment">#输入：str  默认键值：''</span></span><br><span class="line"><span class="comment">#输入：int  默认键值：0</span></span><br><span class="line"><span class="comment">#输入：list  默认键值：[]</span></span><br><span class="line"><span class="comment">#输入：set  默认键值：set()</span></span><br></pre></td></tr></table></figure>
+<p><em>注意：</em>此处输入可以使用匿名函数lambda，指定具体的默认键值，而不是如上都是空值。举例见下文。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">collections.OrderedDict(builtins.dict)</span><br><span class="line"><span class="comment">#输入参数是一个python的dict类型变量，也可以不输入参数，直接建立一个空的有序字典</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">collections.Counter(builtins.dict)</span><br><span class="line"><span class="comment">#若有输入参数，则对其记数，输入参数可以是字符串、列表、字典、集合等；也可以没有输出参数，创建一个空的统计字典</span></span><br></pre></td></tr></table></figure>
 
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">collections.namedtuple(typename, field_names, *, verbose=<span class="literal">False</span>, rename=<span class="literal">False</span>, module=<span class="literal">None</span>)</span><br><span class="line"><span class="comment">#返回对象具有tuple的不变性，同时可以使用命名引用元素</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="deque"><a href="#deque" class="headerlink" title="deque"></a>deque</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">data=collections.deque([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="comment">#deque([1, 2, 3])</span></span><br><span class="line">data.append(<span class="number">4</span>)</span><br><span class="line">data.appendleft(<span class="number">0</span>)</span><br><span class="line"><span class="comment">#deque([0, 1, 2, 3, 4])</span></span><br><span class="line">data.pop()</span><br><span class="line">data.popleft()</span><br><span class="line"><span class="comment">#deque([1, 2, 3])</span></span><br><span class="line"><span class="comment">#deque可以生成一个双向队列，首尾均可以方便的添加、删除元素。</span></span><br><span class="line"><span class="comment">#输入若为字符串，则自动转为列表</span></span><br></pre></td></tr></table></figure>
+
+
+<h5 id="defaultdict"><a href="#defaultdict" class="headerlink" title="defaultdict"></a>defaultdict</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">data=collections.defaultdict(str)</span><br><span class="line">data  <span class="comment"># defaultdict(str, &#123;&#125;)  表示生成了一个默认键值为''的字典</span></span><br><span class="line">data[<span class="string">'a'</span>]  <span class="comment"># '' 因为字典中没有'a'键，输出空字符串</span></span><br><span class="line">data=collections.defaultdict(<span class="keyword">lambda</span>: <span class="number">5</span>)</span><br><span class="line"><span class="comment">#默认键值为5</span></span><br><span class="line">data=collections.defaultdict(<span class="keyword">lambda</span>: [<span class="number">1</span>,<span class="number">2</span>])</span><br><span class="line"><span class="comment">#默认键值为[1,2]</span></span><br></pre></td></tr></table></figure>
+<h5 id="OrderedDict"><a href="#OrderedDict" class="headerlink" title="OrderedDict"></a>OrderedDict</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">data=collections.OrderedDict()</span><br><span class="line">data[<span class="string">'c'</span>]=<span class="number">1</span></span><br><span class="line">data[<span class="string">'b'</span>]=<span class="number">1</span></span><br><span class="line">data[<span class="string">'a'</span>]=<span class="number">1</span></span><br><span class="line">data    <span class="comment"># OrderedDict([('c', 1), ('b', 1), ('a', 1)])  字典内部顺序取决于输入顺序</span></span><br></pre></td></tr></table></figure>
+<h5 id="Counter"><a href="#Counter" class="headerlink" title="Counter"></a>Counter</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">collections.Counter(<span class="string">'445322264'</span>)</span><br><span class="line"><span class="comment">#Counter(&#123;'4': 3, '5': 1, '3': 1, '2': 3, '6': 1&#125;)  对字符串进行了统计的字典</span></span><br><span class="line">collections.Counter([<span class="string">'abc'</span>,<span class="string">'ss'</span>,<span class="string">'abc'</span>,<span class="string">'s'</span>,<span class="string">'ss'</span>])</span><br><span class="line"><span class="comment">#Counter(&#123;'abc': 2, 'ss': 2, 's': 1&#125;)</span></span><br><span class="line">collections.Counter(<span class="string">'445322264'</span>).most_common(<span class="number">3</span>)</span><br><span class="line"><span class="comment">#[('4', 3), ('2', 3), ('5', 1)]   </span></span><br><span class="line"><span class="comment">#most_common是Counter类的方法,可以列出n个最多的元素，从大到小排列，若n为None，则全列出。</span></span><br></pre></td></tr></table></figure>
+<h5 id="namedtuple"><a href="#namedtuple" class="headerlink" title="namedtuple"></a>namedtuple</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line">coordinate=collections.namedtuple(<span class="string">'coordinate'</span>,[<span class="string">'x'</span>,<span class="string">'y'</span>,<span class="string">'z'</span>])</span><br><span class="line">p=coordinate(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">p.x  <span class="comment"># 1</span></span><br><span class="line">p    <span class="comment"># coordinate(x=1,y=2,z=3)</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -419,6 +457,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+        </div>
+      
 
       
       
@@ -428,15 +472,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2020/02/14/shelve%20%E6%A8%A1%E5%9D%97/" rel="next" title="shelve 模块">
+                <i class="fa fa-chevron-left"></i> shelve 模块
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/04/json%20%E6%A8%A1%E5%9D%97/" rel="prev" title="json 模块">
-                json 模块 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -491,8 +535,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -591,6 +644,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用类和方法"><span class="nav-number">1.</span> <span class="nav-text">常用类和方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#deque"><span class="nav-number">2.1.</span> <span class="nav-text">deque</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#defaultdict"><span class="nav-number">2.2.</span> <span class="nav-text">defaultdict</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#OrderedDict"><span class="nav-number">2.3.</span> <span class="nav-text">OrderedDict</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Counter"><span class="nav-number">2.4.</span> <span class="nav-text">Counter</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#namedtuple"><span class="nav-number">2.5.</span> <span class="nav-text">namedtuple</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
