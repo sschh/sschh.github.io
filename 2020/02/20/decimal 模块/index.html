@@ -90,15 +90,15 @@
 
 
 
-<meta name="description" content="包括深拷贝和浅拷贝操作的模块。 首先要分清变量和对象的概念，python中的变量类似指针，指向各个对象。比如a&#x3D;2，是有一个名为a的变量指向了2这个对象；x&#x3D;[1,2,3]中变量x指向对象[1,2,3]。 然后，在python中，int、float、str、tuple和bool等都是不可变对象，list、set和dict是可变对象。可变对象可以原地修改，而不可变对象不能原地修改。 指向不可变对象的">
+<meta name="description" content="专门处理浮点型数字的模块，其精度高于python的浮点数类型。 120.1+0.1+0.1#输出：0.30000000000000004  python浮点型数不能精确存储   常用类和方法12decimal.Decimal(builtins.object)#输入可以是int，str、tuple或其他Decimal对象。若无输入，返回Decimal(&#39;0&#39;) 123decimal.getconte">
 <meta property="og:type" content="article">
-<meta property="og:title" content="copy 模块">
-<meta property="og:url" content="http://yoursite.com/2020/02/13/copy%20%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:title" content="decimal 模块">
+<meta property="og:url" content="http://yoursite.com/2020/02/20/decimal%20%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="小站">
-<meta property="og:description" content="包括深拷贝和浅拷贝操作的模块。 首先要分清变量和对象的概念，python中的变量类似指针，指向各个对象。比如a&#x3D;2，是有一个名为a的变量指向了2这个对象；x&#x3D;[1,2,3]中变量x指向对象[1,2,3]。 然后，在python中，int、float、str、tuple和bool等都是不可变对象，list、set和dict是可变对象。可变对象可以原地修改，而不可变对象不能原地修改。 指向不可变对象的">
+<meta property="og:description" content="专门处理浮点型数字的模块，其精度高于python的浮点数类型。 120.1+0.1+0.1#输出：0.30000000000000004  python浮点型数不能精确存储   常用类和方法12decimal.Decimal(builtins.object)#输入可以是int，str、tuple或其他Decimal对象。若无输入，返回Decimal(&#39;0&#39;) 123decimal.getconte">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-12T16:05:32.000Z">
-<meta property="article:modified_time" content="2020-02-13T05:49:19.747Z">
+<meta property="article:published_time" content="2020-02-20T15:30:32.000Z">
+<meta property="article:modified_time" content="2020-02-20T15:37:09.347Z">
 <meta property="article:author" content="小羽">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/13/copy 模块/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/20/decimal 模块/"/>
 
 
 
 
 
-  <title>copy 模块 | 小站</title>
+  <title>decimal 模块 | 小站</title>
   
 
 
@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/13/copy%20%E6%A8%A1%E5%9D%97/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/20/decimal%20%E6%A8%A1%E5%9D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小羽">
@@ -337,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">copy 模块</h1>
+          <h1 class="post-title" itemprop="name headline">decimal 模块</h1>
         
 
         <div class="post-meta">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-13T00:05:32+08:00">
-                2020-02-13
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-20T23:30:32+08:00">
+                2020-02-20
               </time>
             
 
@@ -390,8 +390,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/02/13/copy%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/13/copy%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
+                <a href="/2020/02/20/decimal%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/20/decimal%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -424,24 +424,15 @@
       
 
       
-        <p>包括深拷贝和浅拷贝操作的模块。</p>
-<p>首先要分清<strong>变量</strong>和<strong>对象</strong>的概念，python中的<strong>变量类似指针</strong>，指向各个对象。比如a=2，是有一个名为a的变量指向了2这个对象；x=[1,2,3]中变量x指向对象[1,2,3]。</p>
-<p>然后，在python中，int、float、str、tuple和bool等都是<strong>不可变对象</strong>，list、set和dict是<strong>可变对象</strong>。可变对象可以原地修改，而不可变对象不能原地修改。</p>
-<p>指向不可变对象的变量，若要修改，会指向内存处的新对象。可变对象是在原内存处修改，此时，若有不同变量指向同一可变对象，则这些变量都会被修改。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#下面使用str和list类型举例：</span></span><br><span class="line">a=<span class="string">'abc'</span></span><br><span class="line">b=a</span><br><span class="line">a=<span class="string">'xyz'</span></span><br><span class="line">print(a,b)</span><br><span class="line"><span class="comment">#输出：xyz abc 可见a，b指向了不同的对象</span></span><br><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">y=x</span><br><span class="line">x[<span class="number">0</span>]=<span class="number">10</span></span><br><span class="line">print(x,y)</span><br><span class="line"><span class="comment">#输出：[10, 2, 3] [10, 2, 3] 可见修改x[0]同时改变了y[0]</span></span><br></pre></td></tr></table></figure>
+        <p>专门处理浮点型数字的模块，其精度高于python的浮点数类型。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">0.1</span>+<span class="number">0.1</span>+<span class="number">0.1</span></span><br><span class="line"><span class="comment">#输出：0.30000000000000004  python浮点型数不能精确存储</span></span><br></pre></td></tr></table></figure>
 
-<p>由此可见，使用 ’ = ‘ 复制变量对于不可变对象没问题，但是对于可变对象确不行。</p>
-<p>接下来引入深拷贝和浅拷贝概念：</p>
-<p><strong>深拷贝</strong>：将对象完全复制生成一个新的对象，是我们所理解的复制意义。</p>
-<p><strong>浅拷贝</strong>：类似于复制了一个指针，如果原变量改变，复制变量也被修改。</p>
-<h4 id="常用函数与示例"><a href="#常用函数与示例" class="headerlink" title="常用函数与示例"></a>常用函数与示例</h4><p>常用函数包括两个，copy是浅拷贝方法，deepcopy是深拷贝方法，完全复制对象。</p>
-<p>对于普通对象，copy和deepcopy没有区别，但是对于嵌套的复杂结构，比如list内嵌套了list，两者就存在差异。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">y=copy.copy(x)</span><br><span class="line">x[<span class="number">0</span>]=<span class="number">10</span></span><br><span class="line">print(x,y)</span><br><span class="line"><span class="comment">#输出：[10, 2, 3] [1, 2, 3] 可以看到与上文中的区别，修改x不会影响y</span></span><br><span class="line"><span class="comment">#此处使用deepcopy也行</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> copy</span><br><span class="line">x=[<span class="number">1</span>,[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],<span class="number">5</span>]</span><br><span class="line">y=copy.copy(x)</span><br><span class="line">x[<span class="number">0</span>]=<span class="number">10</span></span><br><span class="line">x[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">20</span></span><br><span class="line">print(x,y)</span><br><span class="line"><span class="comment">#输出：[10, [2, 20, 4], 5] [1, [2, 20, 4], 5]</span></span><br><span class="line"><span class="comment">#当list中嵌套list时，对于浅拷贝，修改x[0]不会产生影响，但是嵌套的list仍然会受到影响，y[1][1]也更改了</span></span><br><span class="line">x=[<span class="number">1</span>,[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],<span class="number">5</span>]</span><br><span class="line">y=copy.deepcopy(x)</span><br><span class="line">x[<span class="number">0</span>]=<span class="number">10</span></span><br><span class="line">x[<span class="number">1</span>][<span class="number">1</span>]=<span class="number">20</span></span><br><span class="line">print(x,y)</span><br><span class="line"><span class="comment">#输出：[10, [2, 20, 4], 5] [1, [2, 3, 4], 5]</span></span><br><span class="line"><span class="comment">#使用深拷贝，y[1][1]仍然是原来的值。x和y指向两个不同的对象。</span></span><br></pre></td></tr></table></figure>
 
-<p>总之，对于不可变对象可以直接使用’=‘复制变量；简单可变对象，可以使用浅拷贝；对于可变对象且存在嵌套结构，则需要深拷贝，从而完全创建一个新对象。</p>
-<p>另外，对于简单可变对象，比如list的浅拷贝还有一种简单方式，不必导入copy模块，即<strong>切片</strong>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">y=x[:]</span><br><span class="line">x[<span class="number">0</span>]=<span class="number">10</span></span><br><span class="line">print(x,y)</span><br><span class="line"><span class="comment">#输出：[10, 2, 3] [1, 2, 3]</span></span><br><span class="line"><span class="comment">#可见只需在x后加上[:],将x全部切出并创建了新的对象</span></span><br></pre></td></tr></table></figure>
+<h4 id="常用类和方法"><a href="#常用类和方法" class="headerlink" title="常用类和方法"></a>常用类和方法</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">decimal.Decimal(builtins.object)</span><br><span class="line"><span class="comment">#输入可以是int，str、tuple或其他Decimal对象。若无输入，返回Decimal('0')</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">decimal.getcontext()</span><br><span class="line"><span class="comment">#Context(prec=28, rounding=ROUND_HALF_EVEN, Emin=-999999, Emax=999999, capitals=1, clamp=0, flags=[Inexact, FloatOperation, Rounded], traps=[InvalidOperation, DivisionByZero, Overflow])</span></span><br><span class="line"><span class="comment">#返回decimal类型的一些全局设置。最常用的是prec，表示精度，默认28。</span></span><br></pre></td></tr></table></figure>
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="Decimal"><a href="#Decimal" class="headerlink" title="Decimal"></a>Decimal</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> decimal</span><br><span class="line">a=decimal.Decimal(<span class="string">'0.01'</span>)</span><br><span class="line">a+a+a</span><br><span class="line"><span class="comment">#Decimal('0.03')</span></span><br><span class="line">decimal.Decimal(<span class="number">0.01</span>)</span><br><span class="line"><span class="comment">#Decimal('0.01000000000000000020816681711721685132943093776702880859375')</span></span><br><span class="line"><span class="comment">#若直接输入浮点型，精度会出问题，需要转为str类型输入</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="getcontext-prec"><a href="#getcontext-prec" class="headerlink" title="getcontext().prec"></a>getcontext().prec</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> decimal</span><br><span class="line">decimal.getcontext().prec = <span class="number">4</span> </span><br><span class="line"><span class="comment">#设置小数点后保留4位</span></span><br><span class="line">decimal.Decimal(<span class="string">'0.123000'</span>)</span><br><span class="line"><span class="comment">#输出：Decimal('0.123000')   #精度设置不能影响固定输入</span></span><br><span class="line">decimal.Decimal(<span class="string">'0.123'</span>)*decimal.Decimal(<span class="string">'0.987'</span>)</span><br><span class="line"><span class="comment">#输出：Decimal('0.1214')</span></span><br></pre></td></tr></table></figure>
 
 
       
@@ -473,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/11/glob%20%E6%A8%A1%E5%9D%97/" rel="next" title="glob 模块">
-                <i class="fa fa-chevron-left"></i> glob 模块
+              <a href="/2020/02/15/collections%20%E6%A8%A1%E5%9D%97/" rel="next" title="collections 模块">
+                <i class="fa fa-chevron-left"></i> collections 模块
               </a>
             
           </div>
@@ -483,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/02/14/shelve%20%E6%A8%A1%E5%9D%97/" rel="prev" title="shelve 模块">
-                shelve 模块 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/02/20/fractions%20%E6%A8%A1%E5%9D%97/" rel="prev" title="fractions 模块">
+                fractions 模块 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -659,7 +650,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用函数与示例"><span class="nav-number">1.</span> <span class="nav-text">常用函数与示例</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用类和方法"><span class="nav-number">1.</span> <span class="nav-text">常用类和方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Decimal"><span class="nav-number">2.1.</span> <span class="nav-text">Decimal</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#getcontext-prec"><span class="nav-number">2.2.</span> <span class="nav-text">getcontext().prec</span></a></li></ol></li></ol></div>
             
 
           </div>
