@@ -90,15 +90,15 @@
 
 
 
-<meta name="description" content="在Python和C结构之间转换的函数，用于二进制数据存储和处理，处理c语言中的结构体。 常用函数常用函数包括如下三个，pack将数据封装成字节流；unpack根据给定格式解析字节，返回tuple类型； calcsize返回给定的格式占用内存的字节数。 1struct.pack(fmt, v1, v2, ...) -&gt; bytes 1struct.unpack(fmt, buffer) -&amp;g">
+<meta name="description" content="包括多种处理不同格式时间数据的函数。 时间的标准表示形式有两种：一种是UTC（格林尼治标准时间GMT）表示，它可以是整数或浮点数（代表秒的分数）。在Unix上，通常是从1970年1月1日开始。 另一种是使用包括9个整型数字的元组表示，其中整型数字及其取值范围如下： 123456789101112tm_year  (比如1998)tm_mon   (1-12)tm_mday  (1-31)tm_ho">
 <meta property="og:type" content="article">
-<meta property="og:title" content="struct 模块">
-<meta property="og:url" content="http://yoursite.com/2020/02/06/struct%20%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:title" content="time 模块">
+<meta property="og:url" content="http://yoursite.com/2020/02/22/time%20%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="小站">
-<meta property="og:description" content="在Python和C结构之间转换的函数，用于二进制数据存储和处理，处理c语言中的结构体。 常用函数常用函数包括如下三个，pack将数据封装成字节流；unpack根据给定格式解析字节，返回tuple类型； calcsize返回给定的格式占用内存的字节数。 1struct.pack(fmt, v1, v2, ...) -&gt; bytes 1struct.unpack(fmt, buffer) -&amp;g">
+<meta property="og:description" content="包括多种处理不同格式时间数据的函数。 时间的标准表示形式有两种：一种是UTC（格林尼治标准时间GMT）表示，它可以是整数或浮点数（代表秒的分数）。在Unix上，通常是从1970年1月1日开始。 另一种是使用包括9个整型数字的元组表示，其中整型数字及其取值范围如下： 123456789101112tm_year  (比如1998)tm_mon   (1-12)tm_mday  (1-31)tm_ho">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-05T16:05:32.000Z">
-<meta property="article:modified_time" content="2020-02-13T07:06:29.291Z">
+<meta property="article:published_time" content="2020-02-21T16:31:32.000Z">
+<meta property="article:modified_time" content="2020-02-22T17:25:53.076Z">
 <meta property="article:author" content="小羽">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -131,13 +131,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/06/struct 模块/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/02/22/time 模块/"/>
 
 
 
 
 
-  <title>struct 模块 | 小站</title>
+  <title>time 模块 | 小站</title>
   
 
 
@@ -320,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/06/struct%20%E6%A8%A1%E5%9D%97/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/22/time%20%E6%A8%A1%E5%9D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小羽">
@@ -337,7 +337,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">struct 模块</h1>
+          <h1 class="post-title" itemprop="name headline">time 模块</h1>
         
 
         <div class="post-meta">
@@ -349,8 +349,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-06T00:05:32+08:00">
-                2020-02-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-22T00:31:32+08:00">
+                2020-02-22
               </time>
             
 
@@ -390,8 +390,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/02/06/struct%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/06/struct%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
+                <a href="/2020/02/22/time%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/22/time%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -424,164 +424,44 @@
       
 
       
-        <p>在Python和C结构之间转换的函数，用于二进制数据存储和处理，处理c语言中的结构体。</p>
-<h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><p>常用函数包括如下三个，pack将数据封装成字节流；unpack根据给定格式解析字节，返回tuple类型； calcsize返回给定的格式占用内存的字节数。</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct.pack(fmt, v1, v2, ...) -&gt; bytes</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct.unpack(fmt, buffer) -&gt; (v1, v2, ...)</span><br></pre></td></tr></table></figure>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">struct.calcsize(fmt) -&gt; int</span><br></pre></td></tr></table></figure>
-<h4 id="格式符（fmt）"><a href="#格式符（fmt）" class="headerlink" title="格式符（fmt）"></a>格式符（fmt）</h4><p>格式符用来表示字节封装或解析的格式，注意：</p>
-<p>1.每个格式符前可以有一个数字，表示个数，比如4s表示长度为4的字符串，2i表示两个整数；</p>
-<p>2.q和Q只在机器支持64位操作时有意义；</p>
-<p>3.P用来转换一个指针,其长度和计算机相关;</p>
-<p>4.f和d的长度和计算机相关。</p>
-<table>
-<thead>
-<tr>
-<th align="center">格式符</th>
-<th align="center">C语言类型</th>
-<th align="center">Python类型</th>
-<th align="center">内存大小</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">x</td>
-<td align="center">填充字节</td>
-<td align="center">无</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">c</td>
-<td align="center">char</td>
-<td align="center">string(长度为1)</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">b</td>
-<td align="center">signed char</td>
-<td align="center">int</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">B</td>
-<td align="center">unsigned char</td>
-<td align="center">int</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">h</td>
-<td align="center">short</td>
-<td align="center">int</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">H</td>
-<td align="center">unsigned short</td>
-<td align="center">int</td>
-<td align="center">2</td>
-</tr>
-<tr>
-<td align="center">i</td>
-<td align="center">int</td>
-<td align="center">int</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">I</td>
-<td align="center">unsigned int/long</td>
-<td align="center">int/long</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">L</td>
-<td align="center">unsigned long</td>
-<td align="center">long</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="center">q</td>
-<td align="center">long long</td>
-<td align="center">long</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="center">Q</td>
-<td align="center">unsigned long long</td>
-<td align="center">long</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="center">f</td>
-<td align="center">float</td>
-<td align="center">float</td>
-<td align="center">4</td>
-</tr>
-<tr>
-<td align="center">d</td>
-<td align="center">double</td>
-<td align="center">float</td>
-<td align="center">8</td>
-</tr>
-<tr>
-<td align="center">s</td>
-<td align="center">char[]</td>
-<td align="center">string</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">p</td>
-<td align="center">char[]</td>
-<td align="center">string</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center">?</td>
-<td align="center">_Bool</td>
-<td align="center">bool</td>
-<td align="center">1</td>
-</tr>
-</tbody></table>
-<h4 id="对齐方式"><a href="#对齐方式" class="headerlink" title="对齐方式"></a>对齐方式</h4><table>
-<thead>
-<tr>
-<th>字符</th>
-<th>字节顺序</th>
-<th>大小</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>@（默认）</td>
-<td>与本机一致</td>
-<td>凑够4个字节</td>
-</tr>
-<tr>
-<td>=</td>
-<td>与本机一致</td>
-<td>按原字节数</td>
-</tr>
-<tr>
-<td>&lt;</td>
-<td>小端</td>
-<td>按原字节数</td>
-</tr>
-<tr>
-<td>&gt;</td>
-<td>大端</td>
-<td>按原字节数</td>
-</tr>
-<tr>
-<td>!</td>
-<td>network（大端）</td>
-<td>按原字节数</td>
-</tr>
-</tbody></table>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="pack"><a href="#pack" class="headerlink" title="pack"></a>pack</h5><p><em>注意：</em>python3所有字符串都是 unicode 字符串，若直接用pack封装会报如下错误：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#error: argument for 's' must be a bytes object</span></span><br></pre></td></tr></table></figure>
-<p>因此字符串处理前需要使用’utf-8’编码，具体方法如下代码段。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">a=<span class="number">10</span></span><br><span class="line">b=<span class="string">'apple'</span></span><br><span class="line">c=<span class="number">35.9</span></span><br><span class="line">d=<span class="literal">True</span></span><br><span class="line">data=struct.pack(<span class="string">"i5sf?"</span>,a,b.encode(<span class="string">'utf-8'</span>),c,d)<span class="comment">#对字符串先编码</span></span><br><span class="line">print(data)</span><br><span class="line"><span class="comment">#输出：b'\n\x00\x00\x00apple\x00\x00\x00\x9a\x99\x0fB\x01'</span></span><br></pre></td></tr></table></figure>
+        <p>包括多种处理不同格式时间数据的函数。</p>
+<p>时间的<strong>标准表示形式</strong>有两种：一种是UTC（格林尼治标准时间GMT）表示，它可以是整数或浮点数（代表秒的分数）。在Unix上，通常是从1970年1月1日开始。</p>
+<p>另一种是使用包括9个整型数字的元组表示，其中整型数字及其取值范围如下：</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">tm_year  (比如<span class="number">1998</span>)</span><br><span class="line">tm_mon   (<span class="number">1</span><span class="number">-12</span>)</span><br><span class="line">tm_mday  (<span class="number">1</span><span class="number">-31</span>)</span><br><span class="line">tm_hour  (<span class="number">0</span><span class="number">-23</span>)</span><br><span class="line">tm_min   (<span class="number">0</span><span class="number">-59</span>)</span><br><span class="line">tm_sec   (<span class="number">0</span><span class="number">-59</span>)</span><br><span class="line">tm_wday  (<span class="number">0</span><span class="number">-6</span>,星期一是<span class="number">0</span>)</span><br><span class="line">tm_yday  (<span class="number">1</span><span class="number">-366</span>，一年中的第几天)</span><br><span class="line">tm_isdst  DST(Daylight Savings Time) flag (<span class="number">-1</span>, <span class="number">0</span> <span class="keyword">or</span> <span class="number">1</span>)</span><br><span class="line">  <span class="number">0</span>：标准时区</span><br><span class="line">  <span class="number">1</span>：DST时区</span><br><span class="line"> <span class="number">-1</span>：基于日期和时间</span><br></pre></td></tr></table></figure>
 
 
-<h5 id="unpack"><a href="#unpack" class="headerlink" title="unpack"></a>unpack</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">t=struct.unpack(<span class="string">"i5sf?"</span>,data)</span><br><span class="line"><span class="comment">#或者：t1,t2,t3,t4=struct.unpack("i5sf?",data)</span></span><br><span class="line">print(t)</span><br><span class="line"><span class="comment">#输出：(10, b'apple', 35.900001525878906, True)</span></span><br></pre></td></tr></table></figure>
-<h5 id="calcsize"><a href="#calcsize" class="headerlink" title="calcsize"></a>calcsize</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> struct</span><br><span class="line">struct.calcsize(<span class="string">'5s'</span>)</span><br><span class="line"><span class="comment">#输出：5</span></span><br><span class="line">struct.calcsize(<span class="string">'3if'</span>)</span><br><span class="line"><span class="comment">#输出：16</span></span><br><span class="line"><span class="comment">#16=3*4+4</span></span><br><span class="line">struct.calcsize(<span class="string">'i5sf?'</span>)</span><br><span class="line"><span class="comment">#输出：17</span></span><br><span class="line"><span class="comment">#17=4+5+3+4+1  </span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">注意：其中3表示填充，因为默认对齐方式为@</span></span><br><span class="line"><span class="string">字节字符串s可以以任何偏移量开头，因为其标准大小为1;</span></span><br><span class="line"><span class="string">i,f等只能以4的倍数的偏移量开头。例如0、4、8等;</span></span><br><span class="line"><span class="string">L,d等只能以8的倍数的偏移量开头。例如0、8、16等。</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line">struct.calcsize(<span class="string">'=i5sf?'</span>)</span><br><span class="line"><span class="comment">#输出：14</span></span><br><span class="line"><span class="comment">#14=4+5+4+1  按原字节数</span></span><br></pre></td></tr></table></figure>
+<h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><p>time模块包括多种时间函数，下面仅介绍常用函数，包括clock、sleep、time、localtime、gmtime、asctime、ctime和strptime。</p>
+<p>其中localtime和gmtime将时间戳转化为<strong>元组</strong>格式；asctime和ctime分别将元组格式和时间戳转化为<strong>字符串</strong>格式；strptime将任意字符串格式时间解析为<strong>元组</strong>格式。</p>
+<p>函数的具体介绍见注释，示例见下文。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.clock() -&gt; floating point number</span><br><span class="line"><span class="comment">#返回自进程开始以来或自第一次调用clock（）以来的CPU时间或实时时间，精度取决于系统</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.sleep(seconds)</span><br><span class="line"><span class="comment">#延迟函数，输入为float类型，单位为秒</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.time() -&gt; floating point number</span><br><span class="line"><span class="comment">#返回时间戳，使用秒数表示。起始时间1970.1.1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">time.localtime([seconds]) -&gt; (tm_year,tm_mon,tm_mday,tm_hour,tm_min,</span><br><span class="line">                                  tm_sec,tm_wday,tm_yday,tm_isdst)</span><br><span class="line"><span class="comment">#将输入时间戳转化为当地时间元组数据。若输入为空，则返回当前时间。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">time.gmtime([seconds]) -&gt; (tm_year, tm_mon, tm_mday, tm_hour, tm_min,</span><br><span class="line">                               tm_sec, tm_wday, tm_yday, tm_isdst)</span><br><span class="line"><span class="comment">#将输入时间戳转化为GMT时间元组数据。若输入为空，则返回当前时间。</span></span><br></pre></td></tr></table></figure>
+
+<p><em>注：</em>gmtime和localtime的区别是返回对象的时间时区不同，但是格式相同。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.asctime([tuple]) -&gt; string</span><br><span class="line"><span class="comment">#将输入时间元组数据(9个参数)转化为字符串格式。若输入为空，则返回当前时间字符串。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">time.ctime(seconds) -&gt; string</span><br><span class="line"><span class="comment">#将输入时间戳转化为字符串格式。若输入为空，则返回当前时间字符串。</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">time.strptime(string, format) -&gt; struct_time</span><br><span class="line"><span class="comment">#根据format格式将字符串string解析为时间元组</span></span><br><span class="line"></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">格式化符号：</span></span><br><span class="line"><span class="string">%Y  年</span></span><br><span class="line"><span class="string">%m  月[01,12]</span></span><br><span class="line"><span class="string">%d  日[01,31]</span></span><br><span class="line"><span class="string">%H  小时[00,23]</span></span><br><span class="line"><span class="string">%M  分[00,59]</span></span><br><span class="line"><span class="string">%S  秒[00,61]</span></span><br><span class="line"><span class="string">%z  时区偏移时间</span></span><br><span class="line"><span class="string">%a  星期缩写</span></span><br><span class="line"><span class="string">%A  星期</span></span><br><span class="line"><span class="string">%b  月份缩写</span></span><br><span class="line"><span class="string">%B  月</span></span><br><span class="line"><span class="string">%I  小时（12小时制）[01,12]</span></span><br><span class="line"><span class="string">%p  AM或PM</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure>
+
+
+<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="clock"><a href="#clock" class="headerlink" title="clock"></a>clock</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.clock()   <span class="comment">#93.811006</span></span><br></pre></td></tr></table></figure>
+
+
+<h5 id="sleep"><a href="#sleep" class="headerlink" title="sleep"></a>sleep</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.localtime().tm_sec   <span class="comment">#42</span></span><br><span class="line">time.sleep(<span class="number">2</span>)</span><br><span class="line">time.localtime().tm_sec   <span class="comment">#44</span></span><br><span class="line"><span class="comment">#相差2，表示休眠了2秒</span></span><br></pre></td></tr></table></figure>
+<h5 id="time"><a href="#time" class="headerlink" title="time"></a>time</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.time()    <span class="comment">#1582348453.2869315</span></span><br></pre></td></tr></table></figure>
+<h5 id="localtime"><a href="#localtime" class="headerlink" title="localtime"></a>localtime</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.localtime()   </span><br><span class="line"><span class="comment">#time.struct_time(tm_year=2020, tm_mon=2, tm_mday=22, tm_hour=13, tm_min=16, tm_sec=4, tm_wday=5, tm_yday=53, tm_isdst=0)</span></span><br><span class="line">time.localtime().tm_year</span><br><span class="line"><span class="comment">#2020   也可以直接这样调用属性</span></span><br></pre></td></tr></table></figure>
+<h5 id="gmtime"><a href="#gmtime" class="headerlink" title="gmtime"></a>gmtime</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.gmtime()</span><br><span class="line"><span class="comment">#time.struct_time(tm_year=2020, tm_mon=2, tm_mday=22, tm_hour=5, tm_min=16, tm_sec=4, tm_wday=5, tm_yday=53, tm_isdst=0)</span></span><br><span class="line"><span class="comment">#gmtime显示的是GMT，localtime显示的是中国时间（博主位置），中国位于东八区，所以差8小时</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="asctime"><a href="#asctime" class="headerlink" title="asctime"></a>asctime</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.asctime()</span><br><span class="line"><span class="comment">#'Sun Feb 23 00:55:18 2020'</span></span><br><span class="line">time.asctime((<span class="number">2019</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">5</span>,<span class="number">16</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">53</span>,<span class="number">0</span>))</span><br><span class="line"><span class="comment">#'Sat Jan  1 05:16:04 2019'  参数不能缺少。输入时间可以不符合客观事实。</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="ctime"><a href="#ctime" class="headerlink" title="ctime"></a>ctime</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.ctime(<span class="number">1582348453.2869315</span>)</span><br><span class="line"><span class="comment">#'Sat Feb 22 13:14:13 2020'</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="strptime"><a href="#strptime" class="headerlink" title="strptime"></a>strptime</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line">time.strptime(<span class="string">'2019/10/1 00:12:34'</span>,<span class="string">'%Y/%m/%d %H:%M:%S'</span>)</span><br><span class="line"><span class="comment">#time.struct_time(tm_year=2019, tm_mon=10, tm_mday=1, tm_hour=0, tm_min=12, tm_sec=34, tm_wday=1, tm_yday=274, tm_isdst=-1)</span></span><br><span class="line"><span class="comment">#可以根据给定时间字符串的格式进行解析，提取需要的时间信息</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
@@ -612,8 +492,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/04/pickle%20%E6%A8%A1%E5%9D%97/" rel="next" title="pickle 模块">
-                <i class="fa fa-chevron-left"></i> pickle 模块
+              <a href="/2020/02/20/fractions%20%E6%A8%A1%E5%9D%97/" rel="next" title="fractions 模块">
+                <i class="fa fa-chevron-left"></i> fractions 模块
               </a>
             
           </div>
@@ -621,10 +501,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/06/calendar%20%E6%A8%A1%E5%9D%97/" rel="prev" title="calendar 模块">
-                calendar 模块 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -798,7 +674,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用函数"><span class="nav-number">1.</span> <span class="nav-text">常用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式符（fmt）"><span class="nav-number">2.</span> <span class="nav-text">格式符（fmt）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对齐方式"><span class="nav-number">3.</span> <span class="nav-text">对齐方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">4.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#pack"><span class="nav-number">4.1.</span> <span class="nav-text">pack</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#unpack"><span class="nav-number">4.2.</span> <span class="nav-text">unpack</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#calcsize"><span class="nav-number">4.3.</span> <span class="nav-text">calcsize</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用方法"><span class="nav-number">1.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#clock"><span class="nav-number">2.1.</span> <span class="nav-text">clock</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sleep"><span class="nav-number">2.2.</span> <span class="nav-text">sleep</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#time"><span class="nav-number">2.3.</span> <span class="nav-text">time</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#localtime"><span class="nav-number">2.4.</span> <span class="nav-text">localtime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#gmtime"><span class="nav-number">2.5.</span> <span class="nav-text">gmtime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#asctime"><span class="nav-number">2.6.</span> <span class="nav-text">asctime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ctime"><span class="nav-number">2.7.</span> <span class="nav-text">ctime</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#strptime"><span class="nav-number">2.8.</span> <span class="nav-text">strptime</span></a></li></ol></li></ol></div>
             
 
           </div>
