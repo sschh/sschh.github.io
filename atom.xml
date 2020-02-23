@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-22T17:25:53.076Z</updated>
+  <updated>2020-02-23T15:45:46.050Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hashlib 模块</title>
+    <link href="http://yoursite.com/2020/02/23/hashlib%20%E6%A8%A1%E5%9D%97/"/>
+    <id>http://yoursite.com/2020/02/23/hashlib%20%E6%A8%A1%E5%9D%97/</id>
+    <published>2020-02-23T14:10:32.000Z</published>
+    <updated>2020-02-23T15:45:46.050Z</updated>
+    
+    <content type="html"><![CDATA[<p>提供多种哈希算法的模块。</p><p><strong>哈希算法</strong>：又叫摘要算法，是一种给定输入计算出一种特殊的结果。哈希算法不可逆，比如输入一串字符串，输出一串奇怪的字符串，无法根据输出反向算出输入（除了暴力穷举破解）。</p><p>哈希算法可以用于校验文件一致性，对多个文件使用相同的哈希算法，若得到的结果相同，则表示文件完全相同，没有丢失或修改数据。</p><p>哈希算法有如下：<br>md5<br>sha1,sha224, sha256, sha384, sha512,<br>blake2b, blake2s<br>sha3_224, sha3_256, sha3_384, sha3_512<br>shake_128, shake_256……</p><p>在该模块中，以上算法都是类，可以调用产生相应的hash对象。</p><p>其中md5和sha1较常见，但是都可能发生碰撞。sha384 和sha512 在32位的平台上会较慢。<br><strong>碰撞</strong>：不同的输入产生了相同的Hash结果。</p><p>该模块产生的hash对象具有以下<strong>四种方法</strong>：</p><p>-update(data)：对输入字节更新哈希对象。更新不是替换，重复调用和将所有输入字符串拼起来一次性调用，产生相同结果。<br>-digest()：返回update方法中输入的hash结果，为bytes对象。<br>-hexdigest()：与digest()类似，但是仅包含十六进制数字，长度是digest结果的两倍。<br>-copy()：复制哈希对象并返回，可用于计算公共初始子字符串的数据hash结果。</p><h4 id="用法举例"><a href="#用法举例" class="headerlink" title="用法举例"></a>用法举例</h4><p>上文中已列举出了hashlib模块中的类（哈希算法），因为这些类的使用方法相同，下文仅以md5算法作为示例。</p><p><strong>注意：</strong>若输入字符串，需要<strong>编码</strong>。因为字符串是unicode对象，无法直接使用哈希算法！在字符串前加上b，将该字符串类型转为bytes类型，等价于使用‘utf-8’编码。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">password= hashlib.md5()</span><br><span class="line">password.update(<span class="string">b"abcdef123"</span>)   <span class="comment">#即：'abcdef123'.encode('utf-8')</span></span><br><span class="line">password.digest()     <span class="comment">#b'\xaa|\x9c\x12\xfct\tU\xefM\xfa\xd6p%\x0f\xf4'</span></span><br><span class="line">password.update(<span class="string">b"xyz"</span>)   <span class="comment">#和password.update(b"abcdef123xyz")产生的hash对象相同</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#也可以用如下方法直接输入文本</span></span><br><span class="line">password=hashlib.md5(<span class="string">'abcdef123'</span>.encode(<span class="string">'gbk'</span>))    <span class="comment">#字符串输入时需要编码</span></span><br><span class="line">password.hexdigest()  <span class="comment">#aa7c9c12fc740955ef4dfad670250ff4      32位</span></span><br><span class="line">password.digest()     <span class="comment">#b'\xaa|\x9c\x12\xfct\tU\xefM\xfa\xd6p%\x0f\xf4'    16位</span></span><br></pre></td></tr></table></figure><p>由以上输出可知，相同字符串编码方式不同，使用相同的hash算法产生的对象相同。</p><h5 id="盐"><a href="#盐" class="headerlink" title="盐"></a>盐</h5><p>使用哈希算法时，对密码加盐是一种加强安全性的手段，可以防止暴力破解明文密码。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line">password=<span class="string">'abcdef123'</span>   <span class="comment">#原密码</span></span><br><span class="line">salt=<span class="string">'tgrcxn'</span>   </span><br><span class="line">salted_password=password+salt</span><br><span class="line">hashlib.md5(salted_password.encode(<span class="string">'ascii'</span>)).hexdigest()  <span class="comment">#对加盐的密码获得hash对象</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;提供多种哈希算法的模块。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;哈希算法&lt;/strong&gt;：又叫摘要算法，是一种给定输入计算出一种特殊的结果。哈希算法不可逆，比如输入一串字符串，输出一串奇怪的字符串，无法根据输出反向算出输入（除了暴力穷举破解）。&lt;/p&gt;
+&lt;p&gt;哈希算法可以用于校验
+      
+    
+    </summary>
+    
+    
+      <category term="python模块" scheme="http://yoursite.com/categories/python%E6%A8%A1%E5%9D%97/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>time 模块</title>
