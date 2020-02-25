@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-23T15:45:46.050Z</updated>
+  <updated>2020-02-25T16:05:27.978Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>jieba 模块</title>
+    <link href="http://yoursite.com/2020/02/25/jieba%20%E6%A8%A1%E5%9D%97/"/>
+    <id>http://yoursite.com/2020/02/25/jieba%20%E6%A8%A1%E5%9D%97/</id>
+    <published>2020-02-24T16:04:11.000Z</published>
+    <updated>2020-02-25T16:05:27.978Z</updated>
+    
+    <content type="html"><![CDATA[<p>用于中文词语切分的库。切分模式有以下三种：</p><p>全模式：返回句子中所有可能的词语，可重复使用字。</p><p>精确模式：将句子精确划分成多个词语，字不能复用。</p><p>搜索引擎模式：在精确模式的基础上近一步划分长词</p><h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><p>jieba模块中有Tokenizer类型，很多模块方法也是Tokenizer实例的属性。以下仅介绍常用方法（属性），实现切分中文字符串的功能。</p><p>jieba还有其他有用的函数，比如load_userdict可以载入个人字典，提升分词结果的准确性。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">jieba.cut(sentence, cut_all=<span class="literal">False</span>, HMM=<span class="literal">True</span>, use_paddle=<span class="literal">False</span>)</span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">返回Tokenizer类型，参数：</span></span><br><span class="line"><span class="string">sentence:输入要切分的句子，str类型</span></span><br><span class="line"><span class="string">cut_all:模式。True：全模式  False：精确模式（默认）</span></span><br><span class="line"><span class="string">HMM: 是否使用隐马尔科夫模型</span></span><br><span class="line"><span class="string">'''</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jieba.cut_for_search(sentence, HMM=<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#返回Tokenizer类型，切分模式：搜索引擎模式</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jieba.lcut</span><br><span class="line">jieba.lcut_for_search</span><br><span class="line"><span class="comment">#返回切分结果的列表（list），用法和前两个方法分别类似</span></span><br></pre></td></tr></table></figure><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="cut"><a href="#cut" class="headerlink" title="cut"></a>cut</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">words=jieba.cut(<span class="string">'这是一个非常有趣的中文分词库'</span>)   </span><br><span class="line"><span class="comment">#&lt;generator object Tokenizer.cut at 0x7f01ca5322b0&gt;</span></span><br><span class="line"><span class="string">'/'</span>.join(words)   <span class="comment">#'这是/一个/非常/有趣/的/中文/分/词库'</span></span><br><span class="line"></span><br><span class="line">words=jieba.cut(<span class="string">'这是一个非常有趣的中文分词库'</span>,cut_all=<span class="literal">True</span>)   <span class="comment">#全模式</span></span><br><span class="line"><span class="string">'/'</span>.join(words)   <span class="comment">#'这/是/一个/非常/常有/有趣/的/中文/分词/词库'</span></span><br></pre></td></tr></table></figure><h5 id="cut-for-search"><a href="#cut-for-search" class="headerlink" title="cut_for_search"></a>cut_for_search</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">words=jieba.cut_for_search(<span class="string">'这是一个非常有趣的中文分词库'</span>)</span><br><span class="line"><span class="string">'/'</span>.join(words)   <span class="comment">#'这是/一个/非常/有趣/的/中文/分/词库'</span></span><br></pre></td></tr></table></figure><p><em>注：</em>cut和cut_for_search方法返回的都是Tokenizer对象，需要使用join或list转为字符串或列表显示。</p><h5 id="lcut"><a href="#lcut" class="headerlink" title="lcut"></a>lcut</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">jieba.lcut(<span class="string">'这是一个非常有趣的中文分词库'</span>)    </span><br><span class="line"><span class="comment">#['这是', '一个', '非常', '有趣', '的', '中文', '分', '词库']</span></span><br><span class="line">jieba.lcut(<span class="string">'这是一个非常有趣的中文分词库'</span>,cut_all=<span class="literal">True</span>)   <span class="comment">#全模式</span></span><br><span class="line"><span class="comment">#['这', '是', '一个', '非常', '常有', '有趣', '的', '中文', '分词', '词库']</span></span><br><span class="line"></span><br><span class="line">jieba.lcut(<span class="string">'这是一个非常有interesting趣的中文分词库'</span>,cut_all=<span class="literal">True</span>)</span><br><span class="line"><span class="comment">#['这', '是', '一个', '非常', '常有', 'interesting', '趣', '的', '中文', '分词', '词库']</span></span><br></pre></td></tr></table></figure><p><em>注：</em>若在输出中文字符串中包括英文字母、数字、符号等，相当于将句子断开，即使断开地方可以组成词语（比如：”有趣“），但是三种切分模式都不会将它组成词语。</p><h5 id="lcut-for-search"><a href="#lcut-for-search" class="headerlink" title="lcut_for_search"></a>lcut_for_search</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line">jieba.lcut_for_search(<span class="string">'这是一个非常有趣的中文分词库'</span>)</span><br><span class="line"><span class="comment">#['这是', '一个', '非常', '有趣', '的', '中文', '分', '词库']</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;用于中文词语切分的库。切分模式有以下三种：&lt;/p&gt;
+&lt;p&gt;全模式：返回句子中所有可能的词语，可重复使用字。&lt;/p&gt;
+&lt;p&gt;精确模式：将句子精确划分成多个词语，字不能复用。&lt;/p&gt;
+&lt;p&gt;搜索引擎模式：在精确模式的基础上近一步划分长词&lt;/p&gt;
+&lt;h4 id=&quot;常用方法&quot;&gt;&lt;a
+      
+    
+    </summary>
+    
+    
+      <category term="python模块" scheme="http://yoursite.com/categories/python%E6%A8%A1%E5%9D%97/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>hashlib 模块</title>
