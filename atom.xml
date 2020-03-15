@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-03T11:02:02.320Z</updated>
+  <updated>2020-03-15T15:32:01.693Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>math 模块</title>
+    <link href="http://yoursite.com/2020/03/15/math%20%E6%A8%A1%E5%9D%97/"/>
+    <id>http://yoursite.com/2020/03/15/math%20%E6%A8%A1%E5%9D%97/</id>
+    <published>2020-03-15T14:04:11.000Z</published>
+    <updated>2020-03-15T15:32:01.693Z</updated>
+    
+    <content type="html"><![CDATA[<p>该模块提供了由C语言标准定义的数学函数。</p><p>还有一个模块叫cmath，其中定义的方法和属性与math模块基本相同，只是cmath适用于复数（complex）。</p><h4 id="常用属性"><a href="#常用属性" class="headerlink" title="常用属性"></a>常用属性</h4><table><thead><tr><th>名称</th><th>值</th></tr></thead><tbody><tr><td>math.pi</td><td>3.141592653589793</td></tr><tr><td>math.e</td><td>2.718281828459045</td></tr><tr><td>math.inf</td><td>inf</td></tr><tr><td>math.nan</td><td>nan</td></tr><tr><td>math.tau</td><td>6.283185307179586</td></tr></tbody></table><p><em>注：</em>对于无穷数除了用math.inf，还可以用float(‘inf’)表示正无穷；-float(‘inf’)或float(‘-inf’)表示负无穷。</p><h4 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h4><h5 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h5><p>三角函数返回结果为弧度值。</p><table><thead><tr><th>名称</th><th>含义</th></tr></thead><tbody><tr><td>math.acos(x)</td><td>反余弦</td></tr><tr><td>math.acosh(x)</td><td>反双曲余弦</td></tr><tr><td>math.asin(x)</td><td>反正弦</td></tr><tr><td>math.asinh(x)</td><td>反双曲余弦</td></tr><tr><td>math.atan(x)</td><td>反正切</td></tr><tr><td>math.atan2(x,y)</td><td>x/y的反正切，与atan(y/x)不同，x和y的符号均被考虑</td></tr><tr><td>math.atanh(x)</td><td>反双曲正切</td></tr><tr><td>math.cos(x)</td><td>余弦</td></tr><tr><td>math.cosh(x)</td><td>双曲余弦</td></tr><tr><td>math.sin(x)</td><td>正弦</td></tr><tr><td>math.sinh(x)</td><td>双曲正弦</td></tr><tr><td>math.tan(x)</td><td>正切</td></tr><tr><td>math.tanh(x)</td><td>双曲正切</td></tr><tr><td>math.degrees(x)</td><td>将弧度值转为角度值</td></tr><tr><td>math.radians(x)</td><td>将角度值转为弧度值</td></tr></tbody></table><h5 id="取整、取小数的函数"><a href="#取整、取小数的函数" class="headerlink" title="取整、取小数的函数"></a>取整、取小数的函数</h5><table><thead><tr><th>名称</th><th>含义</th></tr></thead><tbody><tr><td>math.ceil(x)</td><td>返回不小于x的整数，即：向上取整</td></tr><tr><td>math.floor(x)</td><td>返回不大于x的整数，即：向下取整</td></tr><tr><td>math.trunc(x)</td><td>返回整数部分，和int等效</td></tr><tr><td>math.modf(x)</td><td>返回小数和整数部分，都为浮点数，都带x的符号</td></tr></tbody></table><h5 id="指数、对数函数"><a href="#指数、对数函数" class="headerlink" title="指数、对数函数"></a>指数、对数函数</h5><table><thead><tr><th>名称</th><th>含义</th></tr></thead><tbody><tr><td>math.exp(x)</td><td>以e为底的指数</td></tr><tr><td>math.expm1(x)</td><td>以e为底的指数后减1，对x较小的情况进行精确计算</td></tr><tr><td>math.log(x[, base])</td><td>返回底为base的对数，默认为e</td></tr><tr><td>math.log10(x)</td><td>底为10的对数</td></tr><tr><td>math.log2(x)</td><td>底为2的对数</td></tr><tr><td>math.log1p(x)</td><td>返回1+x的自然对数（底为e），对x接近零的结果进行精确计算</td></tr></tbody></table><h5 id="判断函数"><a href="#判断函数" class="headerlink" title="判断函数"></a>判断函数</h5><table><thead><tr><th>名称</th><th>含义</th></tr></thead><tbody><tr><td>math.isfinite(x)</td><td>判断x是否有限（非inf，非nan）</td></tr><tr><td>math.isinf(x)</td><td>判断x是否是无穷</td></tr><tr><td>math.isnan(x)</td><td>判断x是否是NaN（Not a Number）</td></tr><tr><td>math. isclose(a,b, rel_tol=1e-09, abs_tol=0.0)</td><td>判断两个浮点数值是否接近。rel_tol表示最大相对差异，abs_tol表示最大绝对差异。<em>注：</em>nan和谁都不接近；inf只和自己接近</td></tr></tbody></table><h5 id="其他函数"><a href="#其他函数" class="headerlink" title="其他函数"></a>其他函数</h5><table><thead><tr><th>名称</th><th>含义</th></tr></thead><tbody><tr><td>math.fabs(x)</td><td>绝对值</td></tr><tr><td>math.gcd(x,y)</td><td>x和y的最大公约数</td></tr><tr><td>math.sqrt(x)</td><td>平方根</td></tr><tr><td>math.factorial(x)</td><td>x的阶乘，若x负数或小数，则报错</td></tr><tr><td>math.hypot(x,y)</td><td>欧氏距离，即：<code>sqrt(x*x + y*y)</code></td></tr><tr><td>math.pow(x,y)</td><td>x的y次方</td></tr><tr><td>math.fmod(x,y)</td><td>x对y取余，根据C平台计算，结果可能与x%y不同</td></tr><tr><td>math.fsum(iterable)</td><td>返回浮点数之和的精确值</td></tr><tr><td>math.ldexp(x,i)</td><td><code>x * (2**i)</code></td></tr><tr><td>math.frexp(x)</td><td>ldexp的反函数，返回x的尾数和指数</td></tr><tr><td>math.gamma(x)</td><td>x处的Gamma函数</td></tr><tr><td>math.lgamma(x)</td><td>x处Gamma函数的绝对值的自然对数</td></tr><tr><td>math.erf(x)</td><td>x处的误差函数</td></tr></tbody></table>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;该模块提供了由C语言标准定义的数学函数。&lt;/p&gt;
+&lt;p&gt;还有一个模块叫cmath，其中定义的方法和属性与math模块基本相同，只是cmath适用于复数（complex）。&lt;/p&gt;
+&lt;h4 id=&quot;常用属性&quot;&gt;&lt;a href=&quot;#常用属性&quot; class=&quot;headerlink
+      
+    
+    </summary>
+    
+    
+      <category term="python模块" scheme="http://yoursite.com/categories/python%E6%A8%A1%E5%9D%97/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>profile、line_profiler和memory_profiler 模块</title>
