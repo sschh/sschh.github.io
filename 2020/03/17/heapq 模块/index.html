@@ -90,18 +90,20 @@
 
 
 
-<meta name="description" content="包括分数的表达和计算。 常用类Fraction类型支持基本内置运算，比如加、减、乘、除、绝对值、去上下界等。 12Fraction(numbers.Rational)#输入可以是一个小数、两个有理数(前者分子，后者分母)、字符型分数(分数线：&#39;&#x2F;&#39;)等。默认分子为0，分母为1。 示例Fraction分子是numerator，分母是denominator，可以作为属性名分别查看。 123456789">
+<meta name="description" content="该模块可以实现堆，是python自带模块。当需要使用堆这种数据结构时，可以不必自己编写，直接调用该模块的api，比较方便。 下面先简单介绍一下堆。 堆（heap）堆是一种用数组实现的二叉树，具有以下特点：  堆中每个节点的值总是不大于或不小于其父节点的值 堆是一棵完全二叉树  根节点最大的堆叫最大堆，根节点最小的堆叫最小堆。 因为堆是完全二叉树，所以其实现方式不像树使用链式结构从父节点用指针指向子">
 <meta property="og:type" content="article">
-<meta property="og:title" content="fractions 模块">
-<meta property="og:url" content="http://yoursite.com/2020/02/20/fractions%20%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:title" content="heapq 模块">
+<meta property="og:url" content="http://yoursite.com/2020/03/17/heapq%20%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="小站">
-<meta property="og:description" content="包括分数的表达和计算。 常用类Fraction类型支持基本内置运算，比如加、减、乘、除、绝对值、去上下界等。 12Fraction(numbers.Rational)#输入可以是一个小数、两个有理数(前者分子，后者分母)、字符型分数(分数线：&#39;&#x2F;&#39;)等。默认分子为0，分母为1。 示例Fraction分子是numerator，分母是denominator，可以作为属性名分别查看。 123456789">
+<meta property="og:description" content="该模块可以实现堆，是python自带模块。当需要使用堆这种数据结构时，可以不必自己编写，直接调用该模块的api，比较方便。 下面先简单介绍一下堆。 堆（heap）堆是一种用数组实现的二叉树，具有以下特点：  堆中每个节点的值总是不大于或不小于其父节点的值 堆是一棵完全二叉树  根节点最大的堆叫最大堆，根节点最小的堆叫最小堆。 因为堆是完全二叉树，所以其实现方式不像树使用链式结构从父节点用指针指向子">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-20T15:40:50.000Z">
-<meta property="article:modified_time" content="2020-02-20T15:57:35.736Z">
+<meta property="og:image" content="http://yoursite.com/.com//heap.png">
+<meta property="article:published_time" content="2020-03-17T08:45:45.000Z">
+<meta property="article:modified_time" content="2020-03-17T15:07:13.656Z">
 <meta property="article:author" content="小羽">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/.com//heap.png">
 
 
 
@@ -131,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/20/fractions 模块/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/03/17/heapq 模块/"/>
 
 
 
 
 
-  <title>fractions 模块 | 小站</title>
+  <title>heapq 模块 | 小站</title>
   
 
 
@@ -320,7 +322,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/20/fractions%20%E6%A8%A1%E5%9D%97/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/17/heapq%20%E6%A8%A1%E5%9D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小羽">
@@ -337,7 +339,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">fractions 模块</h1>
+          <h1 class="post-title" itemprop="name headline">heapq 模块</h1>
         
 
         <div class="post-meta">
@@ -349,8 +351,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-20T23:40:50+08:00">
-                2020-02-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-03-17T16:45:45+08:00">
+                2020-03-17
               </time>
             
 
@@ -390,8 +392,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/02/20/fractions%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/20/fractions%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
+                <a href="/2020/03/17/heapq%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/03/17/heapq%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -424,13 +426,44 @@
       
 
       
-        <p>包括分数的表达和计算。</p>
-<h4 id="常用类"><a href="#常用类" class="headerlink" title="常用类"></a>常用类</h4><p>Fraction类型支持基本内置运算，比如加、减、乘、除、绝对值、去上下界等。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Fraction(numbers.Rational)</span><br><span class="line"><span class="comment">#输入可以是一个小数、两个有理数(前者分子，后者分母)、字符型分数(分数线：'/')等。默认分子为0，分母为1。</span></span><br></pre></td></tr></table></figure>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="Fraction"><a href="#Fraction" class="headerlink" title="Fraction"></a>Fraction</h5><p>分子是numerator，分母是denominator，可以作为属性名分别查看。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> fractions</span><br><span class="line">fractions.Fraction(<span class="number">1.3</span>)</span><br><span class="line"><span class="comment">#输出：Fraction(5854679515581645, 4503599627370496)</span></span><br><span class="line">fractions.Fraction(<span class="number">5</span>,<span class="number">-4</span>)*fractions.Fraction(<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line"><span class="comment">#输出：Fraction(-5,2)</span></span><br><span class="line">fractions.Fraction(<span class="string">'5/7'</span>)</span><br><span class="line"><span class="comment">#输出：Fraction(5,7)</span></span><br><span class="line">fractions.Fraction(<span class="string">'5/2'</span>)+<span class="number">0.5</span></span><br><span class="line"><span class="comment">#输出：3.0</span></span><br></pre></td></tr></table></figure>
+        <p>该模块可以实现堆，是python自带模块。当需要使用堆这种数据结构时，可以不必自己编写，直接调用该模块的api，比较方便。</p>
+<p>下面先简单介绍一下堆。</p>
+<h4 id="堆（heap）"><a href="#堆（heap）" class="headerlink" title="堆（heap）"></a>堆（heap）</h4><p>堆是一种用数组实现的二叉树，具有以下特点：</p>
+<ul>
+<li>堆中每个节点的值总是不大于或不小于其父节点的值</li>
+<li>堆是一棵完全二叉树</li>
+</ul>
+<p>根节点最大的堆叫最大堆，根节点最小的堆叫最小堆。</p>
+<p>因为堆是完全二叉树，所以其实现方式不像树使用链式结构从父节点用指针指向子节点。在数组中，堆中某节点的左子节点是该节点索引乘2，右子节点是该节点索引乘2再加1，如下图是一个最大堆：</p>
+<img src="/.com//heap.png" alt="这是一个最大堆的结构图~" style="zoom:63%;">
 
-<p>注意：式子中只要有float，则输出float。否则输出Fraction。</p>
+<p>上图红字是数组中的索引，堆的索引通常从1开始。可见左子节点索引是父节点的2倍，右子节点是父节点索引的2倍再加1。</p>
+<p><strong>堆的常见应用</strong>：</p>
+<ul>
+<li>实现优先队列，可以很容易找出最大值或最小值，并进行删除操作。</li>
+<li>堆排序</li>
+</ul>
+<p>当heap中发生元素变动时，比如添加一个数值，该数可能会对heap结构产生影响，有的节点要改变位置。heapq模块提供方法可以将一个列表转换为堆，可以直接增、删节点，节点根据大小自动变换位置。</p>
+<h4 id="heapq模块中的堆"><a href="#heapq模块中的堆" class="headerlink" title="heapq模块中的堆"></a>heapq模块中的堆</h4><ul>
+<li>索引从0开始。 这使得节点的索引与其子节点的索引之间的关系不太明显，但由于Python中对象从0开始索引，因此更适合。</li>
+<li>最小堆，即：heap[0]是最小项，heappop方法弹出最小项。</li>
+</ul>
+<h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heapq.heapify(x)</span><br><span class="line"><span class="comment">#将一个list原地转换为一个heap，即x按照heap结构排序。时间复杂度：O(len(x))</span></span><br></pre></td></tr></table></figure>
+<p><em>注：</em>heap在python中类型还是list，一个空的list可以作为heap的初始化。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heapq.heappop(x)      -&gt;   x[0]</span><br><span class="line"><span class="comment">#从一个heap（list）中弹出顶部元素（最小值）</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heapq.heappush(x,item)</span><br><span class="line"><span class="comment">#向一个heap中添加元素，自动排序</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heapq.heapreplace(x,item)   -&gt;   x[0]</span><br><span class="line"><span class="comment">#弹出并返回顶部元素，并添加新元素，排序。heap的大小不变。</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><p>为了方便演示，初始化一个列表x，下述方法按顺序进行。</p>
+<h6 id="heapify"><a href="#heapify" class="headerlink" title="heapify"></a>heapify</h6><p>将输入的list原地转换为heap，本质是进行了排序的操作。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">x=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">8</span>]</span><br><span class="line">heapq.heapify(x)</span><br><span class="line">x    <span class="comment"># [1, 4, 2, 5, 7, 6, 8]   1是顶部元素；4、2处于第二层；5、7、6、8处于第三层</span></span><br></pre></td></tr></table></figure>
+<h6 id="heappop"><a href="#heappop" class="headerlink" title="heappop"></a>heappop</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">heapq.heappop(x)      <span class="comment">#  1</span></span><br><span class="line">x    <span class="comment"># [2, 4, 6, 5, 7, 8]      将1弹出后，顶部元素变为2</span></span><br></pre></td></tr></table></figure>
+<h6 id="heappush"><a href="#heappush" class="headerlink" title="heappush"></a>heappush</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">heapq.heappush(x,<span class="number">3</span>)</span><br><span class="line">x    <span class="comment"># [2, 4, 3, 5, 7, 8, 6]   3进入堆中相应位置，对原结构也产生了影响</span></span><br></pre></td></tr></table></figure>
+
+
+<h6 id="heapreplace"><a href="#heapreplace" class="headerlink" title="heapreplace"></a>heapreplace</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">heapq.heapreplace(x,<span class="number">1</span>) <span class="comment">#  2   将顶部元素弹出并返回</span></span><br><span class="line">x    <span class="comment"># [1, 4, 3, 5, 7, 8, 6]  将1加入堆中，重新排序</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -461,8 +494,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/20/decimal%20%E6%A8%A1%E5%9D%97/" rel="next" title="decimal 模块">
-                <i class="fa fa-chevron-left"></i> decimal 模块
+              <a href="/2020/03/15/math%20%E6%A8%A1%E5%9D%97/" rel="next" title="math 模块">
+                <i class="fa fa-chevron-left"></i> math 模块
               </a>
             
           </div>
@@ -470,10 +503,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/22/time%20%E6%A8%A1%E5%9D%97/" rel="prev" title="time 模块">
-                time 模块 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -647,7 +676,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用类"><span class="nav-number">1.</span> <span class="nav-text">常用类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#Fraction"><span class="nav-number">2.1.</span> <span class="nav-text">Fraction</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#堆（heap）"><span class="nav-number">1.</span> <span class="nav-text">堆（heap）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#heapq模块中的堆"><span class="nav-number">2.</span> <span class="nav-text">heapq模块中的堆</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常用方法"><span class="nav-number">2.1.</span> <span class="nav-text">常用方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#示例"><span class="nav-number">2.2.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#heapify"><span class="nav-number">2.2.1.</span> <span class="nav-text">heapify</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#heappop"><span class="nav-number">2.2.2.</span> <span class="nav-text">heappop</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#heappush"><span class="nav-number">2.2.3.</span> <span class="nav-text">heappush</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#heapreplace"><span class="nav-number">2.2.4.</span> <span class="nav-text">heapreplace</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
