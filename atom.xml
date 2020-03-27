@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-17T15:07:13.656Z</updated>
+  <updated>2020-03-27T14:33:22.023Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>queue 模块</title>
+    <link href="http://yoursite.com/2020/03/27/queue%20%E6%A8%A1%E5%9D%97/"/>
+    <id>http://yoursite.com/2020/03/27/queue%20%E6%A8%A1%E5%9D%97/</id>
+    <published>2020-03-27T12:11:25.000Z</published>
+    <updated>2020-03-27T14:33:22.023Z</updated>
+    
+    <content type="html"><![CDATA[<p>queue模块提供了队列这种数据结构，不必费时间自己去构建这类数据结构，比较方便。</p><p>虽然我们可以基于python中的list数据结构，使用pop(0)和append方法实现普通的队列。但是queue模块中提供了更丰富队列的API，该模块主要提供三种队列：Queue、LifoQueue、PriorityQueue。Queue就是前面说的普通队列，先入先出(FIFO)，有最大容量；LifoQueue类似栈，后入先出(LIFO)；PriorityQueue是优先队列，也是我认为这个模块最重要的类。</p><p>另外，其实queue模块还有一种类deque，即双向队列，方法和collections模块的deque类相同，本文不赘述。</p><p>下面先简要介绍一下优先队列这种数据结构：</p><h4 id="优先队列"><a href="#优先队列" class="headerlink" title="优先队列"></a>优先队列</h4><p>我们知道队列是先进去的元素可以先出来（FIFO），出队的次序完全取决于进队时间的早晚，队伍内部不改变数据的相对顺序。但是有时候我们希望维护这样一种数据结构，虽然进入数据有先后，但是每次取出的元素都是最大或最小的，即出队的数据是经过排序的，是有优先级的。这就是优先队列。python的queue模块中，优先队列中优先级约小越先出队。</p><p>优先队列通常都是通过堆来实现的，我另外一篇博文介绍了python的heapq模块，可以实现堆这种数据结构，提到了它的一种应用就是实现优先队列。queue模块的优先队列和heapq模块实现的优先队列的区别是：heapq模块实现最小堆，输入元素是包含数字的列表，通过数字大小排列优先级；queue模块的PriorityQueue，入队元素是tuple，优先级数字在元组中输入，数据可以是任意类型，具体介绍见下文。</p><h4 id="queue模块"><a href="#queue模块" class="headerlink" title="queue模块"></a>queue模块</h4><p> 在python2中是Queue。下面分不同类介绍方法。</p><h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><p>因为queue模块中三种类的方法基本相同，所以下面仅以Queue类为例进行介绍。PriorityQueue的put方法有点差异。</p><p><em>注意：</em>这里Queue是类的名称，不是模块名。</p><p>为了方便介绍后面的方法，生成了一个队列q。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">q=queue.Queue(maxsize=<span class="number">0</span>)</span><br><span class="line"><span class="comment">#初始化一个队列，maxsize表示最大容量，若小于等于0,表示容量无限。默认为0。</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">q.empty()</span><br><span class="line"><span class="comment">#若队列空，返回True，否则False</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">q.full()</span><br><span class="line"><span class="comment">#若队列满，返回True，否则False</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">q.qsize()</span><br><span class="line"><span class="comment">#返回队列实际长度，即元素数量</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">q.put(item, block=<span class="literal">True</span>, timeout=<span class="literal">None</span>)</span><br><span class="line"><span class="comment">#元素入队，可以不同类型</span></span><br><span class="line">q.put((priority number,data)，block=<span class="literal">True</span>, timeout=<span class="literal">None</span>)</span><br><span class="line"><span class="comment">#对于PriorityQueue，入队元素必须是tuple类型，其中priority number表示优先级，越小越优先，data是数据</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">q.get(block=<span class="literal">True</span>, timeout=<span class="literal">None</span>)</span><br><span class="line"><span class="comment">#元素出队，对不同类的队列，出队方式不同</span></span><br></pre></td></tr></table></figure><p><em>注意：get和put方法中的block默认为True，timeout默认为None。block为True表示，若发生阻塞（空队列时get，或满队列时put），等待timeout秒再报错，timeout默认None表示阻塞时一直等待。block为False表示，发生阻塞立刻抛出异常，停止程序。</em></p><h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><h6 id="Queue"><a href="#Queue" class="headerlink" title="Queue"></a>Queue</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> queue</span><br><span class="line">q=queue.Queue(<span class="number">5</span>)</span><br><span class="line">q.put(<span class="string">'a'</span>)</span><br><span class="line">q.put([<span class="number">1</span>,<span class="number">2</span>])</span><br><span class="line">q.qsize()   <span class="comment">#2</span></span><br><span class="line">q.get()   <span class="comment">#'a'</span></span><br></pre></td></tr></table></figure><h6 id="PriorityQueue"><a href="#PriorityQueue" class="headerlink" title="PriorityQueue"></a>PriorityQueue</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> queue</span><br><span class="line">p=queue.PriorityQueue()</span><br><span class="line">p.put((<span class="number">2</span>,<span class="string">'a'</span>))</span><br><span class="line">p.put((<span class="number">1</span>,[<span class="number">1</span>,<span class="number">2</span>]))</span><br><span class="line">p.put((<span class="number">3</span>,<span class="number">1</span>))</span><br><span class="line">p.get()   <span class="comment">#(1, [1, 2])</span></span><br></pre></td></tr></table></figure><h6 id="LifoQueue"><a href="#LifoQueue" class="headerlink" title="LifoQueue"></a>LifoQueue</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> queue</span><br><span class="line">s=queue.LifoQueue()</span><br><span class="line">s.put(&#123;<span class="number">1</span>,<span class="number">2</span>&#125;)</span><br><span class="line">s.put(<span class="number">1</span>)</span><br><span class="line">s.put(<span class="string">'abc'</span>)</span><br><span class="line">s.qsize()   <span class="comment">#3</span></span><br><span class="line">s.get()   <span class="comment">#'abc'</span></span><br><span class="line">s.qsize()   <span class="comment">#2</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;queue模块提供了队列这种数据结构，不必费时间自己去构建这类数据结构，比较方便。&lt;/p&gt;
+&lt;p&gt;虽然我们可以基于python中的list数据结构，使用pop(0)和append方法实现普通的队列。但是queue模块中提供了更丰富队列的API，该模块主要提供三种队列：Que
+      
+    
+    </summary>
+    
+    
+      <category term="python模块" scheme="http://yoursite.com/categories/python%E6%A8%A1%E5%9D%97/"/>
+    
+    
+      <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
+  
+  <entry>
     <title>heapq 模块</title>
     <link href="http://yoursite.com/2020/03/17/heapq%20%E6%A8%A1%E5%9D%97/"/>
     <id>http://yoursite.com/2020/03/17/heapq%20%E6%A8%A1%E5%9D%97/</id>
     <published>2020-03-17T08:45:45.000Z</published>
-    <updated>2020-03-17T15:07:13.656Z</updated>
+    <updated>2020-03-27T16:12:41.036Z</updated>
     
     <content type="html"><![CDATA[<p>该模块可以实现堆，是python自带模块。当需要使用堆这种数据结构时，可以不必自己编写，直接调用该模块的api，比较方便。</p><p>下面先简单介绍一下堆。</p><h4 id="堆（heap）"><a href="#堆（heap）" class="headerlink" title="堆（heap）"></a>堆（heap）</h4><p>堆是一种用数组实现的二叉树，具有以下特点：</p><ul><li>堆中每个节点的值总是不大于或不小于其父节点的值</li><li>堆是一棵完全二叉树</li></ul><p>根节点最大的堆叫最大堆，根节点最小的堆叫最小堆。</p><p>因为堆是完全二叉树，所以其实现方式不像树使用链式结构从父节点用指针指向子节点。在数组中，堆中某节点的左子节点是该节点索引乘2，右子节点是该节点索引乘2再加1，如下图是一个最大堆：</p><img src="/.com//heap.png" alt="这是一个最大堆的结构图~" style="zoom:63%;"><p>上图红字是数组中的索引，堆的索引通常从1开始。可见左子节点索引是父节点的2倍，右子节点是父节点索引的2倍再加1。</p><p><strong>堆的常见应用</strong>：</p><ul><li>实现优先队列，可以很容易找出最大值或最小值，并进行删除操作。</li><li>堆排序</li></ul><p>当heap中发生元素变动时，比如添加一个数值，该数可能会对heap结构产生影响，有的节点要改变位置。heapq模块提供方法可以将一个列表转换为堆，可以直接增、删节点，节点根据大小自动变换位置。</p><h4 id="heapq模块中的堆"><a href="#heapq模块中的堆" class="headerlink" title="heapq模块中的堆"></a>heapq模块中的堆</h4><ul><li>索引从0开始。 这使得节点的索引与其子节点的索引之间的关系不太明显，但由于Python中对象从0开始索引，因此更适合。</li><li>最小堆，即：heap[0]是最小项，heappop方法弹出最小项。</li></ul><h5 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heapq.heapify(x)</span><br><span class="line"><span class="comment">#将一个list原地转换为一个heap，即x按照heap结构排序。时间复杂度：O(len(x))</span></span><br></pre></td></tr></table></figure><p><em>注：</em>heap在python中类型还是list，一个空的list可以作为heap的初始化。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heapq.heappop(x)      -&gt;   x[0]</span><br><span class="line"><span class="comment">#从一个heap（list）中弹出顶部元素（最小值）</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heapq.heappush(x,item)</span><br><span class="line"><span class="comment">#向一个heap中添加元素，自动排序</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">heapq.heapreplace(x,item)   -&gt;   x[0]</span><br><span class="line"><span class="comment">#弹出并返回顶部元素，并添加新元素，排序。heap的大小不变。</span></span><br></pre></td></tr></table></figure><h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><p>为了方便演示，初始化一个列表x，下述方法按顺序进行。</p><h6 id="heapify"><a href="#heapify" class="headerlink" title="heapify"></a>heapify</h6><p>将输入的list原地转换为heap，本质是进行了排序的操作。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">x=[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">2</span>,<span class="number">8</span>]</span><br><span class="line">heapq.heapify(x)</span><br><span class="line">x    <span class="comment"># [1, 4, 2, 5, 7, 6, 8]   1是顶部元素；4、2处于第二层；5、7、6、8处于第三层</span></span><br></pre></td></tr></table></figure><h6 id="heappop"><a href="#heappop" class="headerlink" title="heappop"></a>heappop</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">heapq.heappop(x)      <span class="comment">#  1</span></span><br><span class="line">x    <span class="comment"># [2, 4, 6, 5, 7, 8]      将1弹出后，顶部元素变为2</span></span><br></pre></td></tr></table></figure><h6 id="heappush"><a href="#heappush" class="headerlink" title="heappush"></a>heappush</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">heapq.heappush(x,<span class="number">3</span>)</span><br><span class="line">x    <span class="comment"># [2, 4, 3, 5, 7, 8, 6]   3进入堆中相应位置，对原结构也产生了影响</span></span><br></pre></td></tr></table></figure><h6 id="heapreplace"><a href="#heapreplace" class="headerlink" title="heapreplace"></a>heapreplace</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line">heapq.heapreplace(x,<span class="number">1</span>) <span class="comment">#  2   将顶部元素弹出并返回</span></span><br><span class="line">x    <span class="comment"># [1, 4, 3, 5, 7, 8, 6]  将1加入堆中，重新排序</span></span><br></pre></td></tr></table></figure>]]></content>
     
@@ -538,30 +565,6 @@
     
     
       <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>hello world</title>
-    <link href="http://yoursite.com/2020/02/04/hello-world/"/>
-    <id>http://yoursite.com/2020/02/04/hello-world/</id>
-    <published>2020-02-04T05:35:32.000Z</published>
-    <updated>2020-02-13T07:09:00.666Z</updated>
-    
-    <content type="html"><![CDATA[<p>经过了几番折腾，终于拥有了自己的博客，虽然还有很多欠缺的地方，接下来就边写博客边补充吧。</p><p>在下在读研究生一枚，希望通过博客来整理和分享所学知识，努力坚持更新。部分内容可能不会是原创，若有侵权，请联系，我将删除。若发现文章中有错误，请指正，谢谢！</p><p>还有欢迎您的联系与交流，希望我们可以共同进步。知识，因分享而更加快乐。</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;经过了几番折腾，终于拥有了自己的博客，虽然还有很多欠缺的地方，接下来就边写博客边补充吧。&lt;/p&gt;
-&lt;p&gt;在下在读研究生一枚，希望通过博客来整理和分享所学知识，努力坚持更新。部分内容可能不会是原创，若有侵权，请联系，我将删除。若发现文章中有错误，请指正，谢谢！&lt;/p&gt;
-&lt;p&gt;
-      
-    
-    </summary>
-    
-    
     
   </entry>
   
