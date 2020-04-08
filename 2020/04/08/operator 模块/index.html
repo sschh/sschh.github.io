@@ -90,15 +90,15 @@
 
 
 
-<meta name="description" content="该模块包括3个类和一些常见的运算操作等等。因为该模块是C语言编写的，所以其运算比直接用python编写要快。方法前后可以有双下滑线，和不带下划线等价，比如add和__add__。 常用类itemgetter生成一个可以从输入对象中获得固定索引的取值的可调用对象。比如： 123456import operatora&#x3D;operator.itemgetter(2)   #记录2作为索引a([2,3,4,">
+<meta name="description" content="该模块包括3个类和一些常见的运算操作等等。因为该模块是C语言编写的，所以其中方法的运算比直接用python编写要快。方法前后可以有双下滑线，和不带下划线等价，比如add和__add__。 operator中的类可以生成模板，自定义顺序访问指定索引的值、指定属性或指定方法。 常用类itemgetter生成一个可以从输入对象中获得固定索引的取值的可调用对象。比如： 123456import opera">
 <meta property="og:type" content="article">
 <meta property="og:title" content="operator 模块">
 <meta property="og:url" content="http://yoursite.com/2020/04/08/operator%20%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="小站">
-<meta property="og:description" content="该模块包括3个类和一些常见的运算操作等等。因为该模块是C语言编写的，所以其运算比直接用python编写要快。方法前后可以有双下滑线，和不带下划线等价，比如add和__add__。 常用类itemgetter生成一个可以从输入对象中获得固定索引的取值的可调用对象。比如： 123456import operatora&#x3D;operator.itemgetter(2)   #记录2作为索引a([2,3,4,">
+<meta property="og:description" content="该模块包括3个类和一些常见的运算操作等等。因为该模块是C语言编写的，所以其中方法的运算比直接用python编写要快。方法前后可以有双下滑线，和不带下划线等价，比如add和__add__。 operator中的类可以生成模板，自定义顺序访问指定索引的值、指定属性或指定方法。 常用类itemgetter生成一个可以从输入对象中获得固定索引的取值的可调用对象。比如： 123456import opera">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-04-08T14:41:45.000Z">
-<meta property="article:modified_time" content="2020-04-08T16:14:33.658Z">
+<meta property="article:modified_time" content="2020-04-08T16:20:56.322Z">
 <meta property="article:author" content="小羽">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
@@ -424,7 +424,8 @@
       
 
       
-        <p>该模块包括3个类和一些常见的运算操作等等。因为该模块是C语言编写的，所以其运算比直接用python编写要快。方法前后可以有双下滑线，和不带下划线等价，比如<code>add</code>和<code>__add__</code>。</p>
+        <p>该模块包括3个类和一些常见的运算操作等等。因为该模块是C语言编写的，所以其中方法的运算比直接用python编写要快。方法前后可以有双下滑线，和不带下划线等价，比如<code>add</code>和<code>__add__</code>。</p>
+<p>operator中的类可以生成模板，自定义顺序访问指定索引的值、指定属性或指定方法。</p>
 <h4 id="常用类"><a href="#常用类" class="headerlink" title="常用类"></a>常用类</h4><h5 id="itemgetter"><a href="#itemgetter" class="headerlink" title="itemgetter"></a>itemgetter</h5><p>生成一个可以从输入对象中获得固定<strong>索引</strong>的取值的可调用对象。比如：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> operator</span><br><span class="line">a=operator.itemgetter(<span class="number">2</span>)   <span class="comment">#记录2作为索引</span></span><br><span class="line">a([<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>])   <span class="comment">#4</span></span><br><span class="line"></span><br><span class="line">b=operator.itemgetter(<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>)</span><br><span class="line">b((<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>))   <span class="comment">#('d','c','b')</span></span><br></pre></td></tr></table></figure>
 
