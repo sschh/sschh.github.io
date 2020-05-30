@@ -90,18 +90,21 @@
 
 
 
-<meta name="description" content="一种简单的持久化存储方式，将数据存储至磁盘。产生类似字典的对象。比pickle，json模块简单。 常用函数模块包含方法只有一个open，用来打开指定文件，可读可写，返回对象类似字典。打开的文件后缀名是*.db，输入时可不必输入后缀名。 123shelve.open(filename, flag&#x3D;&#39;c&#39;, protocol&#x3D;None, writeback&#x3D;False)#flag是文件打开模式。默认">
+<meta name="description" content="这是一个可以让python代码自动规范化的开源库，写好的python看着比较混乱，可以使用该库直接改善代码布局，提升可读性。也可以在IDE内（比如PyCharm）中预先配置该库的插件。 PEP8python编程规范，是一种一致性的风格倡议，可以让代码看起来更整洁（当然，如果规范的规则破坏你原有整齐的风格，可以忽略它）。其中规则有：  行限制的最大字符数为79 每一级缩进使用4个空格 导入通常在分开">
 <meta property="og:type" content="article">
-<meta property="og:title" content="shelve 模块">
-<meta property="og:url" content="http://yoursite.com/2020/02/14/shelve%20%E6%A8%A1%E5%9D%97/index.html">
+<meta property="og:title" content="autopep8 模块">
+<meta property="og:url" content="http://yoursite.com/2020/05/13/autopep8%20%E6%A8%A1%E5%9D%97/index.html">
 <meta property="og:site_name" content="小站">
-<meta property="og:description" content="一种简单的持久化存储方式，将数据存储至磁盘。产生类似字典的对象。比pickle，json模块简单。 常用函数模块包含方法只有一个open，用来打开指定文件，可读可写，返回对象类似字典。打开的文件后缀名是*.db，输入时可不必输入后缀名。 123shelve.open(filename, flag&#x3D;&#39;c&#39;, protocol&#x3D;None, writeback&#x3D;False)#flag是文件打开模式。默认">
+<meta property="og:description" content="这是一个可以让python代码自动规范化的开源库，写好的python看着比较混乱，可以使用该库直接改善代码布局，提升可读性。也可以在IDE内（比如PyCharm）中预先配置该库的插件。 PEP8python编程规范，是一种一致性的风格倡议，可以让代码看起来更整洁（当然，如果规范的规则破坏你原有整齐的风格，可以忽略它）。其中规则有：  行限制的最大字符数为79 每一级缩进使用4个空格 导入通常在分开">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-02-13T16:19:44.000Z">
-<meta property="article:modified_time" content="2020-02-13T17:18:50.545Z">
+<meta property="og:image" content="http://yoursite.com/.com//old_autopep8.png">
+<meta property="og:image" content="http://yoursite.com/.com//new_autopep8.png">
+<meta property="article:published_time" content="2020-05-13T14:59:45.000Z">
+<meta property="article:modified_time" content="2020-05-30T16:13:46.091Z">
 <meta property="article:author" content="小羽">
 <meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/.com//old_autopep8.png">
 
 
 
@@ -131,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/14/shelve 模块/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/13/autopep8 模块/"/>
 
 
 
 
 
-  <title>shelve 模块 | 小站</title>
+  <title>autopep8 模块 | 小站</title>
   
 
 
@@ -320,7 +323,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/14/shelve%20%E6%A8%A1%E5%9D%97/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/13/autopep8%20%E6%A8%A1%E5%9D%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="小羽">
@@ -337,7 +340,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">shelve 模块</h1>
+          <h1 class="post-title" itemprop="name headline">autopep8 模块</h1>
         
 
         <div class="post-meta">
@@ -349,8 +352,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-14T00:19:44+08:00">
-                2020-02-14
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-13T22:59:45+08:00">
+                2020-05-13
               </time>
             
 
@@ -390,8 +393,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2020/02/14/shelve%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2020/02/14/shelve%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
+                <a href="/2020/05/13/autopep8%20%E6%A8%A1%E5%9D%97/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020/05/13/autopep8%20%E6%A8%A1%E5%9D%97/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -424,15 +427,27 @@
       
 
       
-        <p>一种简单的持久化存储方式，将数据存储至磁盘。产生类似字典的对象。比pickle，json模块简单。</p>
-<h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><p>模块包含方法只有一个open，用来打开指定文件，可读可写，返回对象类似字典。打开的文件后缀名是<strong>*.db</strong>，输入时可不必输入后缀名。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">shelve.open(filename, flag=<span class="string">'c'</span>, protocol=<span class="literal">None</span>, writeback=<span class="literal">False</span>)</span><br><span class="line"><span class="comment">#flag是文件打开模式。默认为c，可读写，文件不存在则创建；r：只读；w：只写；n：创建新的空文件，可读写</span></span><br><span class="line"><span class="comment">#writeback：默认为False。若为True，将所有从.db中读取的对象存放到一个内存缓存中</span></span><br></pre></td></tr></table></figure>
-<p><strong>注意：</strong>键必须是字符串类型，值可以是python内的所有数据类型。</p>
-<h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="open"><a href="#open" class="headerlink" title="open"></a>open</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> shelve</span><br><span class="line">data=shelve.open(<span class="string">'data'</span>)</span><br><span class="line">data[<span class="string">'a'</span>]=<span class="number">1</span></span><br><span class="line">data[<span class="string">'b'</span>]=<span class="string">'abc'</span></span><br><span class="line">data[<span class="string">'c'</span>]=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">data[<span class="string">'d'</span>]=&#123;<span class="string">'a'</span>:<span class="number">1</span>,<span class="string">'b'</span>:<span class="number">2</span>&#125;</span><br><span class="line"><span class="comment">#list(data.items())</span></span><br><span class="line"><span class="comment">#输出：[('b','abc'),('d',&#123;'a': 1,'b': 2&#125;),('a',1),('c',[1,2,3,4])]</span></span><br><span class="line"><span class="comment">#因为返回对象类似字典，因此可以使用字典的方法，比如items()</span></span><br><span class="line">data.close()</span><br><span class="line"><span class="comment">#最后要关闭文件</span></span><br></pre></td></tr></table></figure>
-<p><strong>关于参数writeback</strong></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">data=shelve.open(<span class="string">'data'</span>)</span><br><span class="line">data[<span class="string">'c'</span>].append(<span class="number">5</span>)</span><br><span class="line">print(data[<span class="string">'c'</span>])</span><br><span class="line"><span class="comment">#输出：[1,2,3,4]</span></span><br><span class="line">data.close()</span><br><span class="line">data=shelve.open(<span class="string">'data'</span>,writeback=<span class="literal">True</span>)</span><br><span class="line">data[<span class="string">'c'</span>].append(<span class="number">5</span>)</span><br><span class="line">print(data[<span class="string">'c'</span>])</span><br><span class="line"><span class="comment">#输出：[1,2,3,4,5]</span></span><br><span class="line"><span class="comment">#当writeback设为True时，可以原地修改db中的可变对象了</span></span><br></pre></td></tr></table></figure>
+        <p>这是一个可以让python代码自动规范化的开源库，写好的python看着比较混乱，可以使用该库直接改善代码布局，提升可读性。也可以在IDE内（比如PyCharm）中预先配置该库的插件。</p>
+<h4 id="PEP8"><a href="#PEP8" class="headerlink" title="PEP8"></a>PEP8</h4><p>python编程规范，是一种一致性的风格倡议，可以让代码看起来更整洁（当然，如果规范的规则破坏你原有整齐的风格，可以忽略它）。其中规则有：</p>
+<ul>
+<li>行限制的最大字符数为79</li>
+<li>每一级缩进使用4个空格</li>
+<li>导入通常在分开的行</li>
+<li>优先修改注释</li>
+<li>……</li>
+</ul>
+<p>PEP8 规范原文链接：<a href="http://legacy.python.org/dev/peps/pep-0008/" target="_blank" rel="noopener">官网 </a>    <a href="https://blog.csdn.net/ratsniper/article/details/78954852" target="_blank" rel="noopener">中文版</a></p>
+<h4 id="autopep8"><a href="#autopep8" class="headerlink" title="autopep8"></a>autopep8</h4><p>首先记着安装该库：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip/pip3 install autopep8   <span class="comment">#python2 或 python3</span></span><br></pre></td></tr></table></figure>
 
-<p>writeback设为True时，一次将所有内容读到缓存，消耗了空间和时间，但是可以直接修改其中内容并保存。</p>
+<p>对于需要改的python程序，比如test.py，在命令行输入如下命令：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">autopep8 -i -a test.py 或 autopep8 --<span class="keyword">in</span>-place --aggressive test.py</span><br><span class="line"><span class="comment"># -i,--in-place 在原文件修改</span></span><br><span class="line"><span class="comment"># -a,--aggressive  允许非空格的改变</span></span><br><span class="line">autopep8 -v test.py</span><br><span class="line"><span class="comment"># -v 表示打印出修改内容</span></span><br><span class="line">autopep8 -i -a -a test.py</span><br><span class="line"><span class="comment"># 多个 -a 提升修改级别，一个-a会忽略一些问题</span></span><br></pre></td></tr></table></figure>
+<p>你可以通过<code>--help</code>参数来获取帮助，比如其他参数的使用和含义。<br>autopep8修改的问题有如下通过<code>--select errors</code>参数可以指定前面的序号来修改指定问题： </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">E101 - Reindent all lines.</span><br><span class="line">E11  - Fix indentation.</span><br><span class="line">E121 - Fix indentation to be a multiple of four.</span><br><span class="line">E122 - Add absent indentation <span class="keyword">for</span> hanging indentation.</span><br><span class="line">E123 - Align closing bracket to match opening bracket.</span><br><span class="line">E124 - Align closing bracket to match visual indentation.</span><br><span class="line">E125 - Indent to distinguish line <span class="keyword">from</span> next logical line.</span><br><span class="line">E126 - Fix over-indented hanging indentation.</span><br><span class="line">E127 - Fix visual indentation.</span><br><span class="line">E128 - Fix visual indentation.</span><br><span class="line">E129 - Fix visual indentation.</span><br><span class="line">E131 - Fix hanging indent <span class="keyword">for</span> unaligned continuation line.</span><br><span class="line">E133 - Fix missing indentation <span class="keyword">for</span> closing bracket.</span><br><span class="line">E20  - Remove extraneous whitespace.</span><br><span class="line">E211 - Remove extraneous whitespace.</span><br><span class="line">E22  - Fix extraneous whitespace around keywords.</span><br><span class="line">E224 - Remove extraneous whitespace around operator.</span><br><span class="line">E225 - Fix missing whitespace around operator.</span><br><span class="line">E226 - Fix missing whitespace around arithmetic operator.</span><br><span class="line">E227 - Fix missing whitespace around bitwise/shift operator.</span><br><span class="line">E228 - Fix missing whitespace around modulo operator.</span><br><span class="line">E231 - Add missing whitespace.</span><br><span class="line">E241 - Fix extraneous whitespace around keywords.</span><br><span class="line">E242 - Remove extraneous whitespace around operator.</span><br><span class="line">E251 - Remove whitespace around parameter <span class="string">'='</span> sign.</span><br><span class="line">E252 - Missing whitespace around parameter equals.</span><br><span class="line">E26  - Fix spacing after comment hash <span class="keyword">for</span> inline comments.</span><br><span class="line">E265 - Fix spacing after comment hash <span class="keyword">for</span> block comments.</span><br><span class="line">E266 - Fix too many leading <span class="string">'#'</span> <span class="keyword">for</span> block comments.</span><br><span class="line">E27  - Fix extraneous whitespace around keywords.</span><br><span class="line">E301 - Add missing blank line.</span><br><span class="line">E302 - Add missing <span class="number">2</span> blank lines.</span><br><span class="line">E303 - Remove extra blank lines.</span><br><span class="line">E304 - Remove blank line following function decorator.</span><br><span class="line">E305 - Expected <span class="number">2</span> blank lines after end of function <span class="keyword">or</span> <span class="class"><span class="keyword">class</span>.</span></span><br><span class="line"><span class="class"><span class="title">E306</span> - <span class="title">Expected</span> 1 <span class="title">blank</span> <span class="title">line</span> <span class="title">before</span> <span class="title">a</span> <span class="title">nested</span> <span class="title">definition</span>.</span></span><br><span class="line"><span class="class"><span class="title">E401</span> - <span class="title">Put</span> <span class="title">imports</span> <span class="title">on</span> <span class="title">separate</span> <span class="title">lines</span>.</span></span><br><span class="line"><span class="class"><span class="title">E402</span> - <span class="title">Fix</span> <span class="title">module</span> <span class="title">level</span> <span class="title">import</span> <span class="title">not</span> <span class="title">at</span> <span class="title">top</span> <span class="title">of</span> <span class="title">file</span></span></span><br><span class="line"><span class="class"><span class="title">E501</span> - <span class="title">Try</span> <span class="title">to</span> <span class="title">make</span> <span class="title">lines</span> <span class="title">fit</span> <span class="title">within</span> --<span class="title">max</span>-<span class="title">line</span>-<span class="title">length</span> <span class="title">characters</span>.</span></span><br><span class="line"><span class="class"><span class="title">E502</span> - <span class="title">Remove</span> <span class="title">extraneous</span> <span class="title">escape</span> <span class="title">of</span> <span class="title">newline</span>.</span></span><br><span class="line"><span class="class"><span class="title">E701</span> - <span class="title">Put</span> <span class="title">colon</span>-<span class="title">separated</span> <span class="title">compound</span> <span class="title">statement</span> <span class="title">on</span> <span class="title">separate</span> <span class="title">lines</span>.</span></span><br><span class="line"><span class="class"><span class="title">E70</span>  - <span class="title">Put</span> <span class="title">semicolon</span>-<span class="title">separated</span> <span class="title">compound</span> <span class="title">statement</span> <span class="title">on</span> <span class="title">separate</span> <span class="title">lines</span>.</span></span><br><span class="line"><span class="class"><span class="title">E711</span> - <span class="title">Fix</span> <span class="title">comparison</span> <span class="title">with</span> <span class="title">None</span>.</span></span><br><span class="line"><span class="class"><span class="title">E712</span> - <span class="title">Fix</span> <span class="title">comparison</span> <span class="title">with</span> <span class="title">boolean</span>.</span></span><br><span class="line"><span class="class"><span class="title">E713</span> - <span class="title">Use</span> '<span class="title">not</span> <span class="title">in</span>' <span class="title">for</span> <span class="title">test</span> <span class="title">for</span> <span class="title">membership</span>.</span></span><br><span class="line"><span class="class"><span class="title">E714</span> - <span class="title">Use</span> '<span class="title">is</span> <span class="title">not</span>' <span class="title">test</span> <span class="title">for</span> <span class="title">object</span> <span class="title">identity</span>.</span></span><br><span class="line"><span class="class"><span class="title">E721</span> - <span class="title">Use</span> "<span class="title">isinstance</span><span class="params">()</span>" <span class="title">instead</span> <span class="title">of</span> <span class="title">comparing</span> <span class="title">types</span> <span class="title">directly</span>.</span></span><br><span class="line"><span class="class"><span class="title">E722</span> - <span class="title">Fix</span> <span class="title">bare</span> <span class="title">except</span>.</span></span><br><span class="line"><span class="class"><span class="title">E731</span> - <span class="title">Use</span> <span class="title">a</span> <span class="title">def</span> <span class="title">when</span> <span class="title">use</span> <span class="title">do</span> <span class="title">not</span> <span class="title">assign</span> <span class="title">a</span> <span class="title">lambda</span> <span class="title">expression</span>.</span></span><br><span class="line"><span class="class"><span class="title">W291</span> - <span class="title">Remove</span> <span class="title">trailing</span> <span class="title">whitespace</span>.</span></span><br><span class="line"><span class="class"><span class="title">W292</span> - <span class="title">Add</span> <span class="title">a</span> <span class="title">single</span> <span class="title">newline</span> <span class="title">at</span> <span class="title">the</span> <span class="title">end</span> <span class="title">of</span> <span class="title">the</span> <span class="title">file</span>.</span></span><br><span class="line"><span class="class"><span class="title">W293</span> - <span class="title">Remove</span> <span class="title">trailing</span> <span class="title">whitespace</span> <span class="title">on</span> <span class="title">blank</span> <span class="title">line</span>.</span></span><br><span class="line"><span class="class"><span class="title">W391</span> - <span class="title">Remove</span> <span class="title">trailing</span> <span class="title">blank</span> <span class="title">lines</span>.</span></span><br><span class="line"><span class="class"><span class="title">W503</span> - <span class="title">Fix</span> <span class="title">line</span> <span class="title">break</span> <span class="title">before</span> <span class="title">binary</span> <span class="title">operator</span>.</span></span><br><span class="line"><span class="class"><span class="title">W504</span> - <span class="title">Fix</span> <span class="title">line</span> <span class="title">break</span> <span class="title">after</span> <span class="title">binary</span> <span class="title">operator</span>.</span></span><br><span class="line"><span class="class"><span class="title">W601</span> - <span class="title">Use</span> "<span class="title">in</span>" <span class="title">rather</span> <span class="title">than</span> "<span class="title">has_key</span><span class="params">()</span>".</span></span><br><span class="line"><span class="class"><span class="title">W602</span> - <span class="title">Fix</span> <span class="title">deprecated</span> <span class="title">form</span> <span class="title">of</span> <span class="title">raising</span> <span class="title">exception</span>.</span></span><br><span class="line">W603 - Use "!=" instead of "&lt;&gt;"</span><br><span class="line">W604 - Use <span class="string">"repr()"</span> instead of backticks.</span><br><span class="line">W605 - Fix invalid escape sequence <span class="string">'x'</span>.</span><br><span class="line">W690 - Fix various deprecated code (via lib2to3).</span><br></pre></td></tr></table></figure>
+
+<h5 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h5><p>原始test.py文件：<br><img src="/.com//old_autopep8.png" alt="这是一个乱糟糟的代码图~" style="zoom:70%;"></p>
+<p>自动化修改后：<br><img src="/.com//new_autopep8.png" alt="这是一个整齐一点的代码图~" style="zoom:70%;"></p>
+<p>当然，这个例子展示的只是一小部分，感觉没有显示出该库的便利之处——让混乱的代码变得整洁易读，读者不妨自行试一试~</p>
 
       
     </div>
@@ -463,8 +478,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/02/13/copy%20%E6%A8%A1%E5%9D%97/" rel="next" title="copy 模块">
-                <i class="fa fa-chevron-left"></i> copy 模块
+              <a href="/2020/04/18/algorithms%20%E6%A8%A1%E5%9D%97/" rel="next" title="algorithms 模块">
+                <i class="fa fa-chevron-left"></i> algorithms 模块
               </a>
             
           </div>
@@ -472,10 +487,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/02/15/collections%20%E6%A8%A1%E5%9D%97/" rel="prev" title="collections 模块">
-                collections 模块 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -649,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用函数"><span class="nav-number">1.</span> <span class="nav-text">常用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#示例"><span class="nav-number">2.</span> <span class="nav-text">示例</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#open"><span class="nav-number">2.1.</span> <span class="nav-text">open</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#PEP8"><span class="nav-number">1.</span> <span class="nav-text">PEP8</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#autopep8"><span class="nav-number">2.</span> <span class="nav-text">autopep8</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#示例"><span class="nav-number">2.1.</span> <span class="nav-text">示例</span></a></li></ol></li></ol></div>
             
 
           </div>
