@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-30T16:13:46.091Z</updated>
+  <updated>2020-07-28T16:27:50.590Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>《图解TCP/IP》思维导图整理——计算机网络入门</title>
+    <link href="http://yoursite.com/2020/07/29/%E3%80%8A%E5%9B%BE%E8%A7%A3TCPIP%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2020/07/29/%E3%80%8A%E5%9B%BE%E8%A7%A3TCPIP%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2020-07-28T16:27:08.000Z</published>
+    <updated>2020-07-28T16:27:50.590Z</updated>
+    
+    <content type="html"><![CDATA[<p>《图解TCP/IP》是一本非常适合入门计算机网络的书，网上很多人都推荐的。这本书中使用了大量的图片和通俗的语言介绍计算机网络的基础知识。</p><p>我一边读，一边分章节做了思维导图，囊括了本书的所有主要内容，通过思维导图可以清晰的得到本书的架构和主要内容。</p><p><strong>目录：</strong></p><img src="/.com//图解TCP目录.jpg" alt="《图解TCP/IP》目录" style="zoom:63%;"><p>因为整个思维导图太大，所以分各章节呈现如下：</p><h4 id="各章思维导图"><a href="#各章思维导图" class="headerlink" title="各章思维导图"></a>各章思维导图</h4><h5 id="传输方式分类"><a href="#传输方式分类" class="headerlink" title="传输方式分类"></a>传输方式分类</h5><img src="/.com//传输方式分类.jpg" alt="传输方式分类" style="zoom:63%;"><h5 id="网络设备"><a href="#网络设备" class="headerlink" title="网络设备"></a>网络设备</h5><img src="/.com//网络设备.jpg" alt="网络设备" style="zoom:63%;"><h5 id="数据链路"><a href="#数据链路" class="headerlink" title="数据链路"></a>数据链路</h5><p>包括数据链路的相关技术（MAC地址等）、以太网、无线通信、PPP和其他数据链路等。</p><img src="/.com//数据链路.jpg" alt="数据链路" style="zoom:63%;"><h5 id="IP协议"><a href="#IP协议" class="headerlink" title="IP协议"></a>IP协议</h5><p>包括IP地址、首部、IPv4和IPv6等。</p><img src="/.com//IP协议.png" alt="IP协议" style="zoom:63%;"><h5 id="IP协议相关技术"><a href="#IP协议相关技术" class="headerlink" title="IP协议相关技术"></a>IP协议相关技术</h5><p>包括DNS、ARP、ICMP、DHCP、NAT、IP隧道等。</p><img src="/.com//IP协议相关技术.jpg" alt="IP协议相关技术" style="zoom:63%;"><h5 id="TCP与UDP"><a href="#TCP与UDP" class="headerlink" title="TCP与UDP"></a>TCP与UDP</h5><img src="/.com//TCP与UDP.jpg" alt="TCP与UDP" style="zoom:63%;"><h5 id="路由协议、控制"><a href="#路由协议、控制" class="headerlink" title="路由协议、控制"></a>路由协议、控制</h5><p>包括路由算法、RIP、OSPF、BAG等。</p><img src="/.com//路由协议、控制.jpg" alt="路由协议、控制" style="zoom:63%;"><h5 id="应用协议"><a href="#应用协议" class="headerlink" title="应用协议"></a>应用协议</h5><p>包括远程登录、文件传输、电子邮件、WWW等。</p><img src="/.com//应用协议.jpg" alt="应用协议" style="zoom:63%;"><h5 id="网络安全"><a href="#网络安全" class="headerlink" title="网络安全"></a>网络安全</h5><img src="/.com//网络安全.jpg" alt="网络安全" style="zoom:63%;"><p>个人认为《网络是怎么连接的》和《图解TCP/IP》是两本非常适宜入门计网的书，可以有一个清晰的宏观认识，而且不枯燥。</p><p>鉴于本书原作者是日本人，且是几年前写的。技术日新月异，上文内容可能与当前现实中不符，若发现不符或错误，麻烦指正~</p><p>（思维导图都是用MindMaster画的，需要源文件请评论，话说这个软件免费版本导出图片带水印，我手动去的水印。。）</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;《图解TCP/IP》是一本非常适合入门计算机网络的书，网上很多人都推荐的。这本书中使用了大量的图片和通俗的语言介绍计算机网络的基础知识。&lt;/p&gt;
+&lt;p&gt;我一边读，一边分章节做了思维导图，囊括了本书的所有主要内容，通过思维导图可以清晰的得到本书的架构和主要内容。&lt;/p&gt;
+&lt;p
+      
+    
+    </summary>
+    
+    
+      <category term="计算机网络" scheme="http://yoursite.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="网络" scheme="http://yoursite.com/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>autopep8 模块</title>
@@ -529,33 +557,6 @@
         &lt;p&gt;包括创建和使用迭代器的函数。&lt;/p&gt;
 &lt;p&gt;迭代器是可以记录遍历位置。迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束。迭代器只能往前不会后退。&lt;/p&gt;
 &lt;h4 id=&quot;常用函数&quot;&gt;&lt;a href=&quot;#常用函数&quot; class=&quot;headerlink&quot; tit
-      
-    
-    </summary>
-    
-    
-      <category term="python模块" scheme="http://yoursite.com/categories/python%E6%A8%A1%E5%9D%97/"/>
-    
-    
-      <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>calendar 模块</title>
-    <link href="http://yoursite.com/2020/02/06/calendar%20%E6%A8%A1%E5%9D%97/"/>
-    <id>http://yoursite.com/2020/02/06/calendar%20%E6%A8%A1%E5%9D%97/</id>
-    <published>2020-02-06T12:31:52.000Z</published>
-    <updated>2020-02-13T05:50:11.991Z</updated>
-    
-    <content type="html"><![CDATA[<p>包括日历、日期相关函数。</p><h4 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h4><p>calendar模块有较多函数，此处仅列举常用函数。calendar返回指定年的日历字符串；month返回指定年月的日历；weekday返回指定日期是星期几；isleap判断指定年是不是闰年；leapdays返回指定年限内闰年的数量。</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">calendar.calendar(year,w=2,l=1,c=6,m=3) -&gt; string (multi-line)</span><br><span class="line"><span class="comment">#w表示日之间的间隔宽度，默认间隔2；</span></span><br><span class="line"><span class="comment">#l表示行间隔，默认为1行；</span></span><br><span class="line"><span class="comment">#c表示月之间的间隔宽度，默认为6；</span></span><br><span class="line"><span class="comment">#m表示并列显示的月份数量，默认3个月并排显示</span></span><br></pre></td></tr></table></figure><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calendar.month(year,month,w=0,l=0) -&gt; string (multi-line)</span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">calendar.weekday(year, month, day)  -&gt; int</span><br><span class="line"><span class="comment">#注意：默认0表示星期一；0~6：星期一~星期日。</span></span><br></pre></td></tr></table></figure><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calendar.isleap(year) -&gt; bool</span><br></pre></td></tr></table></figure><p><strong>注意</strong>：闰年包括两种：①公历年份是4的倍数的，且不是100的倍数，比如2020,2004；②公历年份是400的倍数，比如2000。</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">calendar.leapdays(y1, y2) -&gt; int</span><br></pre></td></tr></table></figure><h4 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h4><h5 id="calendar"><a href="#calendar" class="headerlink" title="calendar"></a>calendar</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.calendar(<span class="number">2020</span>))</span><br><span class="line"><span class="comment">#结果返回多行字符串，因此需要打印，直接输出可能格式错乱且包括换行符\n.</span></span><br></pre></td></tr></table></figure><h5 id="month"><a href="#month" class="headerlink" title="month"></a>month</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.month(<span class="number">2020</span>,<span class="number">3</span>))</span><br><span class="line"><span class="comment">#输出：</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">     March 2020</span></span><br><span class="line"><span class="string">Mo Tu We Th Fr Sa Su</span></span><br><span class="line"><span class="string">                   1</span></span><br><span class="line"><span class="string"> 2  3  4  5  6  7  8</span></span><br><span class="line"><span class="string"> 9 10 11 12 13 14 15</span></span><br><span class="line"><span class="string">16 17 18 19 20 21 22</span></span><br><span class="line"><span class="string">23 24 25 26 27 28 29</span></span><br><span class="line"><span class="string">30 31</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure><h5 id="weekday"><a href="#weekday" class="headerlink" title="weekday"></a>weekday</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.weekday(<span class="number">2020</span>,<span class="number">3</span>,<span class="number">5</span>))</span><br><span class="line"><span class="comment">#输出：3  表示星期四</span></span><br></pre></td></tr></table></figure><h5 id="isleap"><a href="#isleap" class="headerlink" title="isleap"></a>isleap</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.isleap(<span class="number">2020</span>))</span><br><span class="line"><span class="comment">#输出：True</span></span><br></pre></td></tr></table></figure><h5 id="leapdays"><a href="#leapdays" class="headerlink" title="leapdays"></a>leapdays</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> calendar</span><br><span class="line">print(calendar.leapdays(<span class="number">1900</span>,<span class="number">2020</span>))</span><br><span class="line"><span class="comment">#输出：29  表示[1900,2020)间有29个闰年</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;包括日历、日期相关函数。&lt;/p&gt;
-&lt;h4 id=&quot;常用函数&quot;&gt;&lt;a href=&quot;#常用函数&quot; class=&quot;headerlink&quot; title=&quot;常用函数&quot;&gt;&lt;/a&gt;常用函数&lt;/h4&gt;&lt;p&gt;calendar模块有较多函数，此处仅列举常用函数。calendar返回指定年的日历
       
     
     </summary>
